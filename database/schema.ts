@@ -1,29 +1,207 @@
-import { pgTable, serial, varchar, timestamp, integer } from "drizzle-orm/pg-core";
+export type Json = string | number | boolean | null | { [key: string]: Json | undefined } | Json[];
 
-// Users Table
-export const users = pgTable("users", {
-	id: serial("id").primaryKey(),
-	firstName: varchar("firstName", { length: 255 }).notNull(),
-	lastName: varchar("lastName", { length: 255 }).notNull(),
-	email: varchar("email", { length: 255 }).unique().notNull(),
-	qrCode: varchar("qr_code", { length: 255 }).notNull(), // Stores the QR code
-});
+export type Database = {
+	graphql_public: {
+		Tables: {
+			[_ in never]: never;
+		};
+		Views: {
+			[_ in never]: never;
+		};
+		Functions: {
+			graphql: {
+				Args: {
+					operationName?: string;
+					query?: string;
+					variables?: Json;
+					extensions?: Json;
+				};
+				Returns: Json;
+			};
+		};
+		Enums: {
+			[_ in never]: never;
+		};
+		CompositeTypes: {
+			[_ in never]: never;
+		};
+	};
+	public: {
+		Tables: {
+			attendance: {
+				Row: {
+					attended_at: string | null;
+					id: number;
+					seminar_id: number;
+					user_id: number;
+				};
+				Insert: {
+					attended_at?: string | null;
+					id?: number;
+					seminar_id: number;
+					user_id: number;
+				};
+				Update: {
+					attended_at?: string | null;
+					id?: number;
+					seminar_id?: number;
+					user_id?: number;
+				};
+				Relationships: [
+					{
+						foreignKeyName: "attendance_seminar_id_seminars_id_fk";
+						columns: ["seminar_id"];
+						isOneToOne: false;
+						referencedRelation: "seminars";
+						referencedColumns: ["id"];
+					},
+					{
+						foreignKeyName: "attendance_user_id_users_id_fk";
+						columns: ["user_id"];
+						isOneToOne: false;
+						referencedRelation: "users";
+						referencedColumns: ["id"];
+					}
+				];
+			};
+			seminars: {
+				Row: {
+					date: string;
+					id: number;
+					title: string;
+				};
+				Insert: {
+					date: string;
+					id?: number;
+					title: string;
+				};
+				Update: {
+					date?: string;
+					id?: number;
+					title?: string;
+				};
+				Relationships: [];
+			};
+			users: {
+				Row: {
+					email: string;
+					firstName: string;
+					id: number;
+					lastName: string;
+					qr_code: string;
+				};
+				Insert: {
+					email: string;
+					firstName: string;
+					id?: number;
+					lastName: string;
+					qr_code: string;
+				};
+				Update: {
+					email?: string;
+					firstName?: string;
+					id?: number;
+					lastName?: string;
+					qr_code?: string;
+				};
+				Relationships: [];
+			};
+		};
+		Views: {
+			[_ in never]: never;
+		};
+		Functions: {
+			[_ in never]: never;
+		};
+		Enums: {
+			[_ in never]: never;
+		};
+		CompositeTypes: {
+			[_ in never]: never;
+		};
+	};
+};
 
-// Seminars Table
-export const seminars = pgTable("seminars", {
-	id: serial("id").primaryKey(),
-	title: varchar("title", { length: 255 }).notNull(),
-	date: timestamp("date").notNull(),
-});
+type PublicSchema = Database[Extract<keyof Database, "public">];
 
-// Attendance Table
-export const attendance = pgTable("attendance", {
-	id: serial("id").primaryKey(),
-	userId: integer("user_id")
-		.references(() => users.id)
-		.notNull(),
-	seminarId: integer("seminar_id")
-		.references(() => seminars.id)
-		.notNull(),
-	attendedAt: timestamp("attended_at").defaultNow(),
-});
+export type Tables<
+	PublicTableNameOrOptions extends keyof (PublicSchema["Tables"] & PublicSchema["Views"]) | { schema: keyof Database },
+	TableName extends PublicTableNameOrOptions extends { schema: keyof Database }
+		? keyof (Database[PublicTableNameOrOptions["schema"]]["Tables"] & Database[PublicTableNameOrOptions["schema"]]["Views"])
+		: never = never
+> = PublicTableNameOrOptions extends { schema: keyof Database }
+	? (Database[PublicTableNameOrOptions["schema"]]["Tables"] &
+			Database[PublicTableNameOrOptions["schema"]]["Views"])[TableName] extends {
+			Row: infer R;
+	  }
+		? R
+		: never
+	: PublicTableNameOrOptions extends keyof (PublicSchema["Tables"] & PublicSchema["Views"])
+	? (PublicSchema["Tables"] & PublicSchema["Views"])[PublicTableNameOrOptions] extends {
+			Row: infer R;
+	  }
+		? R
+		: never
+	: never;
+
+export type TablesInsert<
+	PublicTableNameOrOptions extends keyof PublicSchema["Tables"] | { schema: keyof Database },
+	TableName extends PublicTableNameOrOptions extends { schema: keyof Database }
+		? keyof Database[PublicTableNameOrOptions["schema"]]["Tables"]
+		: never = never
+> = PublicTableNameOrOptions extends { schema: keyof Database }
+	? Database[PublicTableNameOrOptions["schema"]]["Tables"][TableName] extends {
+			Insert: infer I;
+	  }
+		? I
+		: never
+	: PublicTableNameOrOptions extends keyof PublicSchema["Tables"]
+	? PublicSchema["Tables"][PublicTableNameOrOptions] extends {
+			Insert: infer I;
+	  }
+		? I
+		: never
+	: never;
+
+export type TablesUpdate<
+	PublicTableNameOrOptions extends keyof PublicSchema["Tables"] | { schema: keyof Database },
+	TableName extends PublicTableNameOrOptions extends { schema: keyof Database }
+		? keyof Database[PublicTableNameOrOptions["schema"]]["Tables"]
+		: never = never
+> = PublicTableNameOrOptions extends { schema: keyof Database }
+	? Database[PublicTableNameOrOptions["schema"]]["Tables"][TableName] extends {
+			Update: infer U;
+	  }
+		? U
+		: never
+	: PublicTableNameOrOptions extends keyof PublicSchema["Tables"]
+	? PublicSchema["Tables"][PublicTableNameOrOptions] extends {
+			Update: infer U;
+	  }
+		? U
+		: never
+	: never;
+
+export type Enums<
+	PublicEnumNameOrOptions extends keyof PublicSchema["Enums"] | { schema: keyof Database },
+	EnumName extends PublicEnumNameOrOptions extends { schema: keyof Database }
+		? keyof Database[PublicEnumNameOrOptions["schema"]]["Enums"]
+		: never = never
+> = PublicEnumNameOrOptions extends { schema: keyof Database }
+	? Database[PublicEnumNameOrOptions["schema"]]["Enums"][EnumName]
+	: PublicEnumNameOrOptions extends keyof PublicSchema["Enums"]
+	? PublicSchema["Enums"][PublicEnumNameOrOptions]
+	: never;
+
+export type CompositeTypes<
+	PublicCompositeTypeNameOrOptions extends keyof PublicSchema["CompositeTypes"] | { schema: keyof Database },
+	CompositeTypeName extends PublicCompositeTypeNameOrOptions extends {
+		schema: keyof Database;
+	}
+		? keyof Database[PublicCompositeTypeNameOrOptions["schema"]]["CompositeTypes"]
+		: never = never
+> = PublicCompositeTypeNameOrOptions extends { schema: keyof Database }
+	? Database[PublicCompositeTypeNameOrOptions["schema"]]["CompositeTypes"][CompositeTypeName]
+	: PublicCompositeTypeNameOrOptions extends keyof PublicSchema["CompositeTypes"]
+	? PublicSchema["CompositeTypes"][PublicCompositeTypeNameOrOptions]
+	: never;
