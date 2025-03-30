@@ -1,7 +1,5 @@
-import { db } from "@/database";
-import { users } from "@/database/schema";
+import { supabase } from "@/lib/supabase";
 import { generateQRcode } from "@/lib/qrcode";
-import { eq } from "drizzle-orm";
 import { NextResponse } from "next/server";
 
 export async function POST(req: Request) {
@@ -17,9 +15,18 @@ export async function POST(req: Request) {
 		}
 
 		// Check if user is already registered
-		const alreadyRegistered = await db.select().from(users).where(eq(users.email, email));
+		const { data: existingUser, error: checkError } = await supabase
+			.from("users")
+			.select("email")
+			.eq("email", email)
+			.single();
 
-		if (alreadyRegistered.length > 0) {
+		if (checkError && checkError.code !== "PGRST116") {
+			console.error("Error checking user existence:", checkError);
+			return NextResponse.json({ error: "Database error" }, { status: 500 });
+		}
+
+		if (existingUser) {
 			return NextResponse.json({ error: "User already registered" }, { status: 400 });
 		}
 
@@ -32,8 +39,17 @@ export async function POST(req: Request) {
 			return NextResponse.json({ error: "Failed to generate QR code" }, { status: 500 });
 		}
 
-		// Insert new user into the database
-		const newUser = await db.insert(users).values({ firstName, lastName, email, qrCode }).returning();
+		// Insert new user into Supabase
+		const { data: newUser, error: insertError } = await supabase
+			.from("users")
+			.insert({ firstName, lastName, email, qr_code: qrCode })
+			.select()
+			.single();
+
+		if (insertError) {
+			console.error("Error inserting user:", insertError);
+			return NextResponse.json({ error: "Database insertion failed" }, { status: 500 });
+		}
 
 		return NextResponse.json({ user: newUser, qrCode }, { status: 201 });
 	} catch (error) {
