@@ -1,7 +1,8 @@
-import { drizzle } from "drizzle-orm/postgres-js";
-import postgres from "postgres";
-// import * as schema from "./schema";
-import { DATABASE_URL } from "../config/env";
+import { createClient } from "@supabase/supabase-js";
+import { SUPABASE_URL, SUPABASE_ANON_KEY } from "../config/env";
 
-const client = postgres(DATABASE_URL ?? "", { prepare: false });
-export const db = drizzle({ client });
+if (!SUPABASE_URL || !SUPABASE_ANON_KEY) {
+	throw new Error("Supabase URL or Anonymous Key is missing");
+}
+
+export const supabase = createClient(SUPABASE_URL ?? "", SUPABASE_ANON_KEY ?? "");

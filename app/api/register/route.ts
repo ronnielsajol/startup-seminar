@@ -1,4 +1,4 @@
-import { supabase } from "@/lib/supabase";
+import { supabase } from "@/database/index";
 import { generateQRcode } from "@/lib/qrcode";
 import { NextResponse } from "next/server";
 
