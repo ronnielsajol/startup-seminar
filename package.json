@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@supabase/supabase-js": "^2.49.4",
     "appwrite": "^17.0.1",
     "bcryptjs": "^3.0.2",
     "dotenv": "^16.4.7",
@@ -16,6 +17,7 @@
     "next": "15.2.4",
     "pg": "^8.14.1",
     "pg-pool": "^3.8.0",
+    "postgres": "^3.4.5",
     "qrcode": "^1.5.4",
     "react": "^19.0.0",
     "react-dom": "^19.0.0"
