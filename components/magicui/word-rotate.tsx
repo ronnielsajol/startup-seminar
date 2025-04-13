@@ -30,11 +30,15 @@ export function WordRotate({
 
   // Word rotation
   useEffect(() => {
-    const interval = setInterval(() => {
-      setIndex((prevIndex) => (prevIndex + 1) % words.length);
-    }, duration);
+    const timeout = setTimeout(() => {
+      const interval = setInterval(() => {
+        setIndex((prevIndex) => (prevIndex + 1) % words.length);
+      }, duration);
 
-    return () => clearInterval(interval);
+      // Clear interval on unmount
+      return () => clearInterval(interval);
+    }, 2500); // Delay matches the opacity delay
+    return () => clearTimeout(timeout);
   }, [words, duration]);
 
   // Measure text width and make visible
