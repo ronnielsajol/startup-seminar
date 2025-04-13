@@ -74,13 +74,13 @@ export function WordRotate({
           width: { duration: 0.3, ease: "easeInOut" },
           opacity: { delay: 2.5, duration: 0.3, ease: "easeInOut" },
         }}
-        className="font-dm-sans z-10 mx-auto overflow-hidden rounded-4xl bg-[#525252]/30 px-8 py-4 text-center"
+        className="font-dm-sans z-10 mx-auto max-w-full overflow-hidden rounded-4xl bg-[#525252]/30 px-4 py-2 text-center sm:px-8 sm:py-4"
         style={{ width }}
       >
         <AnimatePresence mode="wait">
           <motion.h1
             key={words[index]}
-            className={cn(className, "whitespace-nowrap")}
+            className={cn(className, "w-full text-wrap")}
             {...motionProps}
           >
             {words[index]}
