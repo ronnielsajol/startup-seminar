@@ -1,22 +1,29 @@
-import Navbar from "@/components/Navbar";
+"use client";
+import Logo from "@/components/Logo";
+import { InteractiveGridPattern } from "@/components/magicui/interactive-grid-pattern";
+import { WordRotate } from "@/components/magicui/word-rotate";
+import { cn } from "@/lib/utils";
+
+const texts = ["Seminars", "Workshops", "Coming Soon!"];
 
 export default function Home() {
   return (
-    <div className="flex min-h-screen flex-col items-center px-10 py-3 sm:px-80 sm:py-34">
-      <main className="flex flex-col items-center">
-        <Navbar />
-        <h1 className="font-horizon mt-60 mb-15 text-center text-[10vw] uppercase md:text-[65px] md:text-nowrap">
-          Start-Up Seminar
-        </h1>
-        <h4 className="text-2xl font-bold">May 04 - 06, 2025</h4>
-        <h4 className="text-center text-xl font-extralight">
-          Bulwagang Balagtas, PUP Main Campus, Sta. Mesa
-        </h4>
-        <div className="mt-20 flex space-x-10">
-          <button className="rounded-3xl bg-white px-6 py-3 text-2xl font-extrabold text-black uppercase">
-            Secure your spot
-          </button>
-        </div>
+    <div className="relative flex min-h-screen flex-col items-center justify-center overflow-hidden px-8 py-3 sm:px-80 sm:py-34">
+      <InteractiveGridPattern
+        width={70}
+        height={70}
+        squares={[35, 35]}
+        className={cn(
+          "[mask-image:radial-gradient(1000px_circle_at_center,white,transparent)]",
+          "absolute inset-0",
+        )}
+      />
+      <main className="flex h-full w-full flex-col items-center sm:rounded-3xl sm:p-5">
+        <Logo />
+        <WordRotate
+          words={texts}
+          className="font-dm-sans relative z-10 text-6xl"
+        />
       </main>
     </div>
   );
