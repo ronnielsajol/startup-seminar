@@ -4,7 +4,7 @@ import { InteractiveGridPattern } from "@/components/magicui/interactive-grid-pa
 import { WordRotate } from "@/components/magicui/word-rotate";
 import { cn } from "@/lib/utils";
 
-const texts = ["Seminars", "Workshops", "Coming Soon!"];
+const texts = ["Seminars", "Workshops", "Launching Soon"];
 
 export default function Home() {
   return (
@@ -21,8 +21,9 @@ export default function Home() {
       <main className="flex h-full w-full flex-col items-center sm:rounded-3xl sm:p-5">
         <Logo />
         <WordRotate
+          duration={3500}
           words={texts}
-          className="font-dm-sans relative z-10 text-6xl"
+          className="font-dm-sans relative z-10 text-2xl"
         />
       </main>
     </div>

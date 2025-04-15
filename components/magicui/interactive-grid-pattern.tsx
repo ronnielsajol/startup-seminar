@@ -67,7 +67,7 @@ export function InteractiveGridPattern({
             width={width}
             height={height}
             className={cn(
-              "stroke-gray-400/30 transition-all duration-200 ease-in-out",
+              "stroke-gray-500/20 transition-all duration-200 ease-in-out",
               squaresClassName,
             )}
             onMouseEnter={() => handleMouseEnter(index)}

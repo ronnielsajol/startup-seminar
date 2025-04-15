@@ -1,7 +1,7 @@
 "use client";
 
 import { AnimatePresence, motion, MotionProps } from "motion/react";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 
 import { cn } from "@/lib/utils";
 
@@ -24,9 +24,6 @@ export function WordRotate({
   className,
 }: WordRotateProps) {
   const [index, setIndex] = useState(0);
-  const [width, setWidth] = useState<number>(0);
-  const [visible, setVisible] = useState(false);
-  const spanRef = useRef<HTMLSpanElement>(null);
 
   // Word rotation
   useEffect(() => {
@@ -41,46 +38,28 @@ export function WordRotate({
     return () => clearTimeout(timeout);
   }, [words, duration]);
 
-  // Measure text width and make visible
-  useEffect(() => {
-    if (spanRef.current) {
-      const measured = spanRef.current.offsetWidth;
-      const padding = 64; // px-8 on both sides
-      setWidth(measured + padding);
-      setVisible(true);
-    }
-  }, [index, className]);
-
   return (
     <>
-      {/* Hidden span to measure text width */}
-      <span
-        ref={spanRef}
-        className={cn(
-          className,
-          "pointer-events-none invisible absolute w-max whitespace-nowrap",
-        )}
-      >
-        {words[index]}
-      </span>
-
       <motion.div
+        initial={{ opacity: 0 }}
         animate={{
-          width,
-          opacity: visible ? 1 : 0,
+          opacity: 1,
         }}
-        initial={{ opacity: 0, width: 0 }}
         transition={{
-          width: { duration: 0.3, ease: "easeInOut" },
           opacity: { delay: 2.5, duration: 0.3, ease: "easeInOut" },
         }}
-        className="font-dm-sans z-10 mx-auto max-w-full overflow-hidden rounded-4xl bg-[#525252]/30 px-4 py-2 text-center sm:w-auto sm:px-8 sm:py-4"
-        style={{ width }}
+        className="font-dm-sans z-10 mx-auto max-w-full overflow-hidden rounded-4xl text-center sm:w-auto sm:px-8 sm:py-4"
       >
         <AnimatePresence mode="wait">
           <motion.h1
             key={words[index]}
-            className={cn(className, "w-full text-wrap sm:whitespace-nowrap")}
+            className={cn(
+              className,
+              "w-full font-light tracking-[0.75em] text-wrap uppercase sm:tracking-[1.50em] sm:whitespace-nowrap",
+            )}
+            style={{
+              textShadow: "1px -1px 34px rgba(0,0,0,.7)",
+            }}
             {...motionProps}
           >
             {words[index]}
