@@ -1,13 +1,12 @@
-"use client";
 import Glow from "@/components/Glows";
 import Hero from "@/components/Hero";
-import Introduction from "@/components/Introduction";
 import { Marquee } from "@/components/magicui/marquee";
-import Navbar from "@/components/Navbar";
-
-export default function Root() {
+const Home = () => {
   return (
-    <main className="laptop:px-56 laptop:py-20 relative flex min-h-screen flex-col overflow-hidden bg-[#1c1e1e] px-8 py-3">
+    <main
+      className="relative flex min-h-screen flex-col overflow-hidden"
+      id="home"
+    >
       <div className="absolute inset-0 z-0 mt-4 -ml-72 flex h-full w-full flex-col font-extralight text-white/5">
         <p className="font-horizon-outlined text-center text-[240px] leading-72 font-light tracking-wide whitespace-nowrap">
           START-UP 2025
@@ -34,12 +33,9 @@ export default function Root() {
           Designing Concepts, Launching Realities
         </Marquee>
       </div>
-      <Navbar />
       <Hero />
-      <Introduction />
     </main>
   );
-}
+};
 
-//DM Sans
-//Horizons
+export default Home;

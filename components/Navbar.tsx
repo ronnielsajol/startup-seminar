@@ -1,23 +1,28 @@
 "use client";
 import React, { useState } from "react";
+import Logo from "./Logo";
+import Link from "next/link";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <header className="flex w-full items-center justify-between text-2xl">
+    <header className="text-md relative flex w-full items-center justify-between">
       <div className="flex h-6 flex-row items-center justify-between">
-        <div className="font-semibold uppercase">Start-Up Seminar</div>
+        <Logo className="h-24 md:h-20" />
       </div>
-      <div className="hidden items-center space-x-6 md:flex">
-        <a href="">Home</a>
-        <a href="">Program</a>
-        <a href="">Partnership</a>
+      <div className="hidden items-center space-x-12 font-light xl:flex">
+        <Link href="#hero">Home</Link>
+        <Link href="">What to Expect</Link>
+        <Link href="">Topics and Speakers</Link>
+        <Link href="">Schedule</Link>
+        <Link href="">Socials</Link>
+        <Link href="">Partnership</Link>
       </div>
-      <div className="md:hidden">
+      <div className="xl:hidden">
         <button
           onClick={() => setIsOpen(!isOpen)}
-          className="flex h-12 w-12 cursor-pointer flex-col items-center justify-center"
+          className="relative z-10 flex h-12 w-12 cursor-pointer flex-col items-center justify-center"
         >
           <span
             className={`mb-2 block h-1 w-8 bg-gray-800 transition-transform duration-300 ${
@@ -34,10 +39,13 @@ const Navbar = () => {
           ></span>
         </button>
         {isOpen && (
-          <div className="bg-background absolute top-16 left-0 flex h-[calc(100vh-4rem)] w-full items-center justify-center md:hidden">
-            <div className="flex flex-col items-center space-y-6 py-6">
+          <div className="fixed inset-0 z-9 flex h-screen w-screen items-center justify-center bg-[#1c1e1e]/50 backdrop-blur-md md:hidden">
+            <div className="flex flex-col items-center space-y-6 py-2 text-2xl">
               <a href="">Home</a>
-              <a href="">Program</a>
+              <a href="">What to Expect</a>
+              <a href="">Topics and Speakers</a>
+              <a href="">Schedule</a>
+              <a href="">Socials</a>
               <a href="">Partnership</a>
             </div>
           </div>
