@@ -11,7 +11,7 @@ const Home = () => {
       id="home"
     >
       <Navbar />
-      <div className="absolute inset-0 z-0 mt-4 -ml-72 flex h-full w-full flex-col font-extralight text-white/5">
+      <div className="absolute inset-0 mt-4 -ml-72 flex h-full w-full flex-col font-extralight text-white/5">
         <p className="font-horizon-outlined laptop:text-[10.5rem] desktop:text-[15rem] laptop:leading-[10.5rem] desktop:leading-[15rem] text-center font-light tracking-wide whitespace-nowrap">
           START-UP 2025
         </p>
@@ -56,7 +56,6 @@ const Home = () => {
         </Marquee>
       </div>
       <Hero />
-      {/* <Glow className={cn("max-xl:inset-x-0 max-xl:bottom-10 xl:hidden")} /> */}
     </main>
   );
 };

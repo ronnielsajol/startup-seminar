@@ -11,7 +11,7 @@ const Navbar = () => {
       <div className="flex h-6 flex-row items-center justify-between">
         <Logo className="h-24 md:h-20" />
       </div>
-      <div className="hidden items-center space-x-12 font-light xl:flex">
+      <div className="z-10 hidden items-center space-x-12 font-light xl:flex">
         <Link href="#hero">Home</Link>
         <Link href="">What to Expect</Link>
         <Link href="">Topics and Speakers</Link>
@@ -39,7 +39,7 @@ const Navbar = () => {
           ></span>
         </button>
         {isOpen && (
-          <div className="fixed inset-0 z-9 flex h-screen w-screen items-center justify-center bg-[#1c1e1e]/50 py-2 backdrop-blur-md xl:hidden">
+          <div className="fixed inset-0 z-10 flex h-screen w-screen items-center justify-center bg-[#1c1e1e]/50 py-2 backdrop-blur-md xl:hidden">
             <div className="flex flex-col items-center space-y-6 py-2 text-2xl">
               <a href="">Home</a>
               <a href="">What to Expect</a>

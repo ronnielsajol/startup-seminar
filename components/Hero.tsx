@@ -3,7 +3,10 @@ import React from "react";
 
 const Hero = () => {
   return (
-    <main id="hero" className={cn("mt-10", "laptop:mt-20", "desktop:mt-44")}>
+    <main
+      id="hero"
+      className={cn("z-10 mt-10", "laptop:mt-20", "desktop:mt-44")}
+    >
       <div className={cn("max-xl:grid-rows-2", "grid xl:grid-cols-4")}>
         <div className={cn("xl:col-span-3")}>
           <p
@@ -75,7 +78,7 @@ const Hero = () => {
           <div className="flex max-w-max flex-col gap-2.5">
             <button
               className={cn(
-                "px-8 py-2.5 text-base",
+                "cursor-pointer px-8 py-2.5 text-base",
                 "laptop:px-7 laptop:py-1.5 laptop:text-[0.875rem]",
                 "desktop:px-8 desktop:py-2.5 desktop:text-[0.875rem]",
                 "rounded-[4.25rem] border-2 border-white font-bold",
@@ -85,7 +88,7 @@ const Hero = () => {
             </button>
             <button
               className={cn(
-                "px-8 py-2.5 text-base",
+                "cursor-pointer px-8 py-2.5 text-base",
                 "laptop:px-7 laptop:py-1.5 laptop:text-[0.875rem]",
                 "desktop:px-8 desktop:py-2.5 desktop:text-[0.875rem]",
                 "rounded-[4.25rem] bg-white font-bold text-black",
