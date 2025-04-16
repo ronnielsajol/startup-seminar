@@ -102,8 +102,8 @@ const Hero = () => {
       <div
         className={cn(
           "grid-rows-4 max-xl:gap-y-4 max-xl:pb-32",
-          "laptop:mt-20",
-          "desktop:mt-40",
+          "laptop:mt-[80px]",
+          "desktop:mt-[160px]",
           "grid xl:grid-cols-4",
         )}
       >
