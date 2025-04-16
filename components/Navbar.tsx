@@ -7,7 +7,7 @@ const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <header className="text-md relative flex w-full items-center justify-between">
+    <header className="text-md relative flex w-full items-center justify-between bg-transparent">
       <div className="flex h-6 flex-row items-center justify-between">
         <Logo className="h-24 md:h-20" />
       </div>
@@ -25,21 +25,21 @@ const Navbar = () => {
           className="relative z-10 flex h-12 w-12 cursor-pointer flex-col items-center justify-center"
         >
           <span
-            className={`mb-2 block h-1 w-8 bg-gray-800 transition-transform duration-300 ${
+            className={`mb-2 block h-1 w-8 rounded-2xl bg-gray-200/50 transition-transform duration-300 ${
               isOpen ? "translate-y-3 rotate-45 transform" : "-translate-y-0.5"
             }`}
           ></span>
           <span
-            className={`mb-2 block h-1 w-8 bg-gray-800 transition-opacity duration-300 ${isOpen ? "opacity-0" : ""}`}
+            className={`mb-2 block h-1 w-8 rounded-2xl bg-gray-200/50 transition-opacity duration-300 ${isOpen ? "opacity-0" : ""}`}
           ></span>
           <span
-            className={`block h-1 w-8 bg-gray-800 transition-transform duration-300 ${
+            className={`block h-1 w-8 rounded-2xl bg-gray-200/50 transition-transform duration-300 ${
               isOpen ? "-translate-y-3 -rotate-45 transform" : "translate-y-0.5"
             }`}
           ></span>
         </button>
         {isOpen && (
-          <div className="fixed inset-0 z-9 flex h-screen w-screen items-center justify-center bg-[#1c1e1e]/50 backdrop-blur-md md:hidden">
+          <div className="fixed inset-0 z-9 flex h-screen w-screen items-center justify-center bg-[#1c1e1e]/50 py-2 backdrop-blur-md xl:hidden">
             <div className="flex flex-col items-center space-y-6 py-2 text-2xl">
               <a href="">Home</a>
               <a href="">What to Expect</a>

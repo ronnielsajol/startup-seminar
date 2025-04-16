@@ -26,8 +26,8 @@
 
 @theme {
   --breakpoint-*: initial;
-  --breakpoint-xl: 80rem;
-  --breakpoint-laptop: 90rem;
+  --breakpoint-xl: 50rem;
+  --breakpoint-laptop: 60rem;
   --breakpoint-desktop: 120rem;
 }
 
