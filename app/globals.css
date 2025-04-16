@@ -36,7 +36,7 @@
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
-  --font-dm-sans: "DM Sans", sans-serif;
+  --font-dm-sans: var(--font-dm-sans);
   --font-horizon: "Horizon", sans-serif;
   --font-horizon-outlined: "Horizon Outline", sans-serif;
   --color-sidebar-ring: var(--sidebar-ring);
