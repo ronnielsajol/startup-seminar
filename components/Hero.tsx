@@ -1,5 +1,7 @@
 import { cn } from "@/lib/utils";
 import React from "react";
+import Countdown from "./Countdown";
+import { Marquee } from "./magicui/marquee";
 
 const Hero = () => {
   return (
@@ -101,9 +103,9 @@ const Hero = () => {
       </div>
       <div
         className={cn(
-          "grid-rows-4 max-xl:gap-y-4 max-xl:pb-32",
-          "laptop:mt-[80px]",
-          "desktop:mt-[160px]",
+          "grid-rows-4 max-xl:relative max-xl:gap-y-4 max-xl:pb-20",
+          "laptop:mt-12",
+          "desktop:mt-40",
           "grid xl:grid-cols-4",
         )}
       >
@@ -123,10 +125,10 @@ const Hero = () => {
               "max-xl:text-[1.55rem]",
               "laptop:text-xl",
               "desktop:text-3xl",
-              "font-bold",
+              "font-bold tracking-widest",
             )}
           >
-            00:00:00:00
+            <Countdown />
           </h2>
         </div>
         <div className="flex flex-col">
@@ -195,6 +197,9 @@ const Hero = () => {
             Facebook Live
           </h2>
         </div>
+        <Marquee className="font-horizon absolute inset-x-0 -bottom-3 z-20 -ml-7.5 w-[calc(100%+5rem)] min-w-full bg-white font-black text-black uppercase xl:hidden">
+          Designing Concepts, Launching Realities
+        </Marquee>
       </div>
     </main>
   );

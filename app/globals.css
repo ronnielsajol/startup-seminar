@@ -3,6 +3,7 @@
 @import "tw-animate-css";
 
 @custom-variant dark (&:is(.dark *));
+@layer speakers;
 
 @utility clip-polygon-bottom {
   clip-path: polygon(0 0, 100% 0, 100% 80%, 50% 100%, 0 80%);

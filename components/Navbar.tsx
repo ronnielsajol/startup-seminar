@@ -8,10 +8,10 @@ const Navbar = () => {
 
   return (
     <header className="text-md relative flex w-full items-center justify-between bg-transparent">
-      <div className="flex h-6 flex-row items-center justify-between">
+      <div className="relative z-30 flex h-6 flex-row items-center justify-between">
         <Logo className="h-24 md:h-20" />
       </div>
-      <div className="z-10 hidden items-center space-x-12 font-light xl:flex">
+      <div className="z-20 hidden items-center space-x-12 font-light xl:flex">
         <Link href="#hero">Home</Link>
         <Link href="">What to Expect</Link>
         <Link href="">Topics and Speakers</Link>
@@ -22,7 +22,7 @@ const Navbar = () => {
       <div className="xl:hidden">
         <button
           onClick={() => setIsOpen(!isOpen)}
-          className="relative z-10 flex h-12 w-12 cursor-pointer flex-col items-center justify-center"
+          className="relative z-30 flex h-12 w-12 cursor-pointer flex-col items-center justify-center"
         >
           <span
             className={`mb-2 block h-1 w-8 rounded-2xl bg-gray-200/50 transition-transform duration-300 ${
@@ -39,7 +39,7 @@ const Navbar = () => {
           ></span>
         </button>
         {isOpen && (
-          <div className="fixed inset-0 z-10 flex h-screen w-screen items-center justify-center bg-[#1c1e1e]/50 py-2 backdrop-blur-md xl:hidden">
+          <div className="fixed inset-0 z-20 flex h-screen w-screen items-center justify-center bg-[#1c1e1e]/50 py-2 backdrop-blur-md xl:hidden">
             <div className="flex flex-col items-center space-y-6 py-2 text-2xl">
               <a href="">Home</a>
               <a href="">What to Expect</a>
