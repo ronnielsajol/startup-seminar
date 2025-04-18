@@ -105,7 +105,7 @@ const Hero = () => {
         className={cn(
           "grid-rows-4 max-xl:relative max-xl:gap-y-4 max-xl:pb-20",
           "laptop:mt-12",
-          "desktop:mt-40",
+          "desktop:mt-20",
           "grid xl:grid-cols-4",
         )}
       >
