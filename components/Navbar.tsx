@@ -9,12 +9,12 @@ const Navbar = () => {
   return (
     <header className="text-md relative flex w-full items-center justify-between bg-transparent">
       <div className="relative z-30 flex h-6 flex-row items-center justify-between">
-        <Logo className="h-24 md:h-20" />
+        <Logo className="desktop:h-20 h-24" />
       </div>
       <div className="z-20 hidden items-center space-x-12 font-light xl:flex">
         <Link href="#hero">Home</Link>
-        <Link href="">What to Expect</Link>
-        <Link href="">Topics and Speakers</Link>
+        <Link href="#whatToExpect">What to Expect</Link>
+        <Link href="#topicsAndSpeakers">Topics and Speakers</Link>
         <Link href="">Schedule</Link>
         <Link href="">Socials</Link>
         <Link href="">Partnership</Link>

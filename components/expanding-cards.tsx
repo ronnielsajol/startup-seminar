@@ -40,7 +40,12 @@ export function ExpandingCards({ items, className }: ExpandingCardsProps) {
           }}
           onMouseEnter={() => setActiveId(item.id)}
         >
-          <div className="absolute top-20 -left-10 rotate-90 rounded-4xl px-5 py-2.5 text-2xl font-bold whitespace-nowrap uppercase max-xl:-left-15">
+          <div
+            className={cn(
+              "absolute top-20 -left-10 rotate-90 rounded-4xl px-5 py-2.5 text-2xl font-bold whitespace-nowrap uppercase max-xl:-left-15",
+              activeId === item.id ? "opacity-0" : "opacity-100",
+            )}
+          >
             Session 1
           </div>
           <div

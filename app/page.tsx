@@ -1,6 +1,8 @@
 "use client";
+import Footer from "@/components/Footer";
 import Home from "@/components/Home";
 import Introduction from "@/components/Introduction";
+import Sponsors from "@/components/Sponsors";
 import WhatToExpect from "@/components/WhatToExpect";
 
 export default function Root() {
@@ -9,6 +11,8 @@ export default function Root() {
       <Home />
       <Introduction />
       <WhatToExpect />
+      <Sponsors />
+      <Footer />
     </main>
   );
 }

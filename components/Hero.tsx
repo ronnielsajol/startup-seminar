@@ -80,7 +80,7 @@ const Hero = () => {
           <div className="flex max-w-max flex-col gap-2.5">
             <button
               className={cn(
-                "cursor-pointer px-8 py-2.5 text-base",
+                "cursor-pointer px-8 py-2.5 text-base transition duration-300 ease-in-out hover:bg-white hover:text-black",
                 "laptop:px-7 laptop:py-1.5 laptop:text-[0.875rem]",
                 "desktop:px-8 desktop:py-2.5 desktop:text-[0.875rem]",
                 "rounded-[4.25rem] border-2 border-white font-bold",
@@ -90,7 +90,7 @@ const Hero = () => {
             </button>
             <button
               className={cn(
-                "cursor-pointer px-8 py-2.5 text-base",
+                "cursor-pointer px-8 py-2.5 text-base transition duration-300 ease-in-out hover:bg-black hover:text-white",
                 "laptop:px-7 laptop:py-1.5 laptop:text-[0.875rem]",
                 "desktop:px-8 desktop:py-2.5 desktop:text-[0.875rem]",
                 "rounded-[4.25rem] bg-white font-bold text-black",
