@@ -35,7 +35,9 @@ export function ExpandingCards({ items, className }: ExpandingCardsProps) {
   return (
     <motion.div
       initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
+      whileInView={{ opacity: 1 }}
+      transition={{ duration: 0.5, delay: 0.5 }}
+      viewport={{ once: true }}
       className={cn(
         "flex min-h-[500px] w-full max-w-[calc(100%-100px)] min-w-[600px] items-stretch justify-center gap-2 px-10 max-xl:w-full max-xl:overflow-x-scroll",
         className,

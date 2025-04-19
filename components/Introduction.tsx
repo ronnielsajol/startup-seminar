@@ -1,21 +1,7 @@
 import { cn } from "@/lib/utils";
 import React from "react";
 import { motion } from "motion/react";
-
-const container = {
-  hidden: { opacity: 0 },
-  show: {
-    opacity: 1,
-    transition: {
-      staggerChildren: 0.5,
-    },
-  },
-};
-
-const child = {
-  hidden: { opacity: 0, y: 20 },
-  show: { opacity: 1, y: 0 },
-};
+import { BoxReveal } from "./magicui/box-reveal";
 
 const Introduction = () => {
   return (
@@ -27,43 +13,53 @@ const Introduction = () => {
       )}
     >
       <div className={cn("max-xl:grid-rows-2", "laptop:grid-cols-2 grid")}>
-        <motion.div
-          variants={container}
-          initial="hidden"
-          whileInView="show"
-          viewport={{ once: true }}
-          className={cn("flex flex-col gap-4", "max-xl:order-2")}
-        >
-          <motion.div variants={child} className="flex gap-2 max-xl:items-end">
+        <div className={cn("flex flex-col gap-4", "max-xl:order-2")}>
+          <div className="flex gap-2 max-xl:items-end">
             <div className="flex items-center justify-center text-6xl">
               <h1>🚀</h1>
             </div>
             <div className="flex flex-col justify-start">
-              <p className="text-base">Introduction</p>
-              <p
-                className={cn("desktop:text-6xl font-black", "laptop:text-4xl")}
-              >
-                Why Start-Up?
-              </p>
+              <BoxReveal boxColor={"#1e73e8"} duration={0.5}>
+                <p className="text-base">Introduction</p>
+              </BoxReveal>
+              <BoxReveal boxColor={"#8e44ad"} duration={0.5}>
+                <p
+                  className={cn(
+                    "desktop:text-6xl font-black",
+                    "laptop:text-4xl",
+                  )}
+                >
+                  Why Start-Up?
+                </p>
+              </BoxReveal>
             </div>
-          </motion.div>
-          <motion.p variants={child} className="text-base">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut
-            consequat mi mauris, vitae pretium lacus congue et. Donec pretium
-            feugiat mauris et eleifend. Nam tincidunt odio nec ornare porttitor.
-            Vivamus ac tempor neque. Cras a consectetur ipsum. Nunc vitae{" "}
-          </motion.p>
-          <motion.div variants={child} className="text-base">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut
-            consequat mi mauris, vitae pretium lacus congue et. Donec pretium
-            feugiat mauris et eleifend. Nam tincidunt odio nec ornare porttitor.
-            Vivamus ac tempor neque. Cras a consectetur ipsum. Nunc vitae
-            faucibus mauris, vel ornare purus. Nunc iaculis turpis ac facilisis
-            sodales. Ut auctor non urna nec fringilla. Aenean cursus lorem arcu,
-            ac finibus nunc maximus eget.
-          </motion.div>
+          </div>
+          <BoxReveal boxColor="#ff3b3b" duration={0.5}>
+            <p className="text-base">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut
+              consequat mi mauris, vitae pretium lacus congue et. Donec pretium
+              feugiat mauris et eleifend. Nam tincidunt odio nec ornare
+              porttitor. Vivamus ac tempor neque. Cras a consectetur ipsum. Nunc
+              vitae{" "}
+            </p>
+          </BoxReveal>
+          <BoxReveal boxColor="#ff6d00" duration={0.5}>
+            <div className="text-base">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut
+              consequat mi mauris, vitae pretium lacus congue et. Donec pretium
+              feugiat mauris et eleifend. Nam tincidunt odio nec ornare
+              porttitor. Vivamus ac tempor neque. Cras a consectetur ipsum. Nunc
+              vitae faucibus mauris, vel ornare purus. Nunc iaculis turpis ac
+              facilisis sodales. Ut auctor non urna nec fringilla. Aenean cursus
+              lorem arcu, ac finibus nunc maximus eget.
+            </div>
+          </BoxReveal>
+
           <motion.div
-            variants={child}
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            transition={{ duration: 1 }}
+            viewport={{ once: true }}
             className="laptop:mt-10 flex gap-2 max-xl:flex-col"
           >
             <button
@@ -83,7 +79,7 @@ const Introduction = () => {
               Get Your Ticket
             </button>
           </motion.div>
-        </motion.div>
+        </div>
         <div className="place-content-center place-items-end max-xl:order-1">
           <motion.div
             initial={{ opacity: 0 }}
