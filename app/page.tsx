@@ -16,6 +16,3 @@ export default function Root() {
     </main>
   );
 }
-
-//DM Sans
-//Horizons

@@ -17,7 +17,7 @@ const Navbar = () => {
         <Link href="#topicsAndSpeakers">Topics and Speakers</Link>
         <Link href="">Schedule</Link>
         <Link href="">Socials</Link>
-        <Link href="">Partnership</Link>
+        <Link href="#partnership">Partnership</Link>
       </div>
       <div className="xl:hidden">
         <button

@@ -53,45 +53,45 @@ const cards = [
 
 const sessions = [
   {
+    id: "1",
     title: "Session 1",
     subtitle: "The Startup Journey",
-    backgroundImage:
-      "https://i.pinimg.com/736x/bd/1b/65/bd1b6576c47b1a8be5b5b72b48cf1816.jpg",
+    backgroundImage: "https://picsum.photos/1000/1000?random=1",
     filterColor: "#1e73e8",
   },
   {
+    id: "2",
     title: "Session 2",
     subtitle: "Core Technologies for Startups",
-    backgroundImage:
-      "https://i.pinimg.com/736x/bd/1b/65/bd1b6576c47b1a8be5b5b72b48cf1816.jpg",
+    backgroundImage: "https://picsum.photos/1000/1000?random=2",
     filterColor: "#8e44ad",
   },
   {
+    id: "3",
     title: "Session 3",
     subtitle: "Cloud and Connectivity",
-    backgroundImage:
-      "https://i.pinimg.com/736x/bd/1b/65/bd1b6576c47b1a8be5b5b72b48cf1816.jpg",
+    backgroundImage: "https://picsum.photos/1000/1000?random=3",
     filterColor: "#00c853",
   },
   {
+    id: "4",
     title: "Session 4",
     subtitle: "Expansive Reach in the Digital Age",
-    backgroundImage:
-      "https://i.pinimg.com/736x/bd/1b/65/bd1b6576c47b1a8be5b5b72b48cf1816.jpg",
+    backgroundImage: "https://picsum.photos/1000/1000?random=4",
     filterColor: "#ffc107",
   },
   {
+    id: "5",
     title: "Session 5",
     subtitle: "Responsible Tech Development",
-    backgroundImage:
-      "https://i.pinimg.com/736x/bd/1b/65/bd1b6576c47b1a8be5b5b72b48cf1816.jpg",
+    backgroundImage: "https://picsum.photos/1000/1000?random=5",
     filterColor: "#ff6d00",
   },
   {
+    id: "6",
     title: "Session 6",
     subtitle: "Pitching Business Readiness",
-    backgroundImage:
-      "https://i.pinimg.com/736x/bd/1b/65/bd1b6576c47b1a8be5b5b72b48cf1816.jpg",
+    backgroundImage: "https://picsum.photos/1000/1000?random=6",
     filterColor: "#ff3b3b",
   },
 ];
