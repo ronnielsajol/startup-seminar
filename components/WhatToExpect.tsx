@@ -5,6 +5,7 @@ import BackgroundOverlay from "./BackgroundOverlay";
 import { ExpandingCards } from "./expanding-cards";
 import { Marquee } from "./magicui/marquee";
 import { SessionCardGrid } from "./SessionCardGrid";
+import { motion } from "motion/react";
 
 const cards = [
   {
@@ -105,25 +106,35 @@ const WhatToExpect = () => {
       )}
       id="whatToExpect"
     >
-      <div className="relative z-10 flex flex-col items-center gap-16">
-        <div className="flex flex-col gap-2.5 text-center">
+      <div className="relative z-10 flex flex-col items-center gap-12">
+        <motion.div
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.5, ease: "easeIn" }}
+          className="flex flex-col gap-2.5 text-center"
+        >
           <h4 className="desktop:text-base laptop:text-[0.85rem]">
             Seminars and Workshop
           </h4>
-          <h1 className="desktop:text-6xl laptop:text-4xl font-black">
+          <h1 className="desktop:text-6xl laptop:text-4xl text-3xl font-black">
             What to expect?
           </h1>
-        </div>
+        </motion.div>
         <SessionCardGrid sessions={sessions} />
 
         <div
           className="flex flex-col items-center max-xl:gap-5"
           id="topicsAndSpeakers"
         >
-          <h1 className="font-horizon desktop:text-[8rem] laptop:text-[6rem] -ml-5 tracking-wide whitespace-nowrap uppercase">
+          <h1 className="font-horizon desktop:text-[8rem] laptop:text-[6rem] -ml-5 text-[20px] tracking-wide whitespace-nowrap uppercase">
             <Marquee>Topics and Speakers</Marquee>
           </h1>
-          <p className="laptop:max-w-[800px] desktop:max-w-[900px] max-w-[300px] text-center text-base max-xl:text-start">
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.5, ease: "easeIn" }}
+            className="laptop:max-w-[800px] desktop:max-w-[900px] max-w-[300px] text-center text-base max-xl:text-start"
+          >
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut
             consequat mi mauris, vitae pretium lacus congue et. Donec pretium
             feugiat mauris et eleifend. Nam tincidunt odio nec ornare porttitor.
@@ -131,7 +142,7 @@ const WhatToExpect = () => {
             faucibus mauris, vel ornare purus. Nunc iaculis turpis ac facilisis
             sodales. Ut auctor non urna nec fringilla. Aenean cursus lorem arcu,
             ac finibus nunc maximus eget. Vestibulum nec euismod augue.
-          </p>
+          </motion.p>
         </div>
         {/* <ExpandingCards /> */}
         <div className="w-full overflow-x-auto max-xl:overflow-x-scroll">

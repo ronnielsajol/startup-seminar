@@ -2,7 +2,7 @@
 
 import * as React from "react";
 import { cn } from "@/lib/utils";
-
+import { motion } from "motion/react";
 export interface CardItem {
   id: string;
   name: string;
@@ -15,10 +15,27 @@ interface ExpandingCardsProps {
 }
 
 export function ExpandingCards({ items, className }: ExpandingCardsProps) {
-  const [activeId, setActiveId] = React.useState<string>(items[0]?.id);
+  const [activeId, setActiveId] = React.useState<string | undefined>(undefined);
+
+  const resetTimeoutRef = React.useRef<NodeJS.Timeout | null>(null);
+
+  const handleMouseEnter = (id: string) => {
+    if (resetTimeoutRef.current) {
+      clearTimeout(resetTimeoutRef.current);
+    }
+    setActiveId(id);
+  };
+
+  const handleMouseLeave = () => {
+    resetTimeoutRef.current = setTimeout(() => {
+      setActiveId(undefined);
+    }, 3000); // or 5000 if you want a long delay
+  };
 
   return (
-    <div
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
       className={cn(
         "flex min-h-[500px] w-full max-w-[calc(100%-100px)] min-w-[600px] items-stretch justify-center gap-2 px-10 max-xl:w-full max-xl:overflow-x-scroll",
         className,
@@ -38,7 +55,8 @@ export function ExpandingCards({ items, className }: ExpandingCardsProps) {
             radial-gradient(circle at bottom left, rgba(0,0,0,.8), transparent),
             url(${item.backgroundUrl})`,
           }}
-          onMouseEnter={() => setActiveId(item.id)}
+          onMouseEnter={() => handleMouseEnter(item.id)}
+          onMouseLeave={handleMouseLeave}
         >
           <div
             className={cn(
@@ -82,6 +100,6 @@ export function ExpandingCards({ items, className }: ExpandingCardsProps) {
           </div>
         </div>
       ))}
-    </div>
+    </motion.div>
   );
 }

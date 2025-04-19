@@ -1,23 +1,71 @@
 "use client";
 import React, { useState } from "react";
 import Logo from "./Logo";
-import Link from "next/link";
+import { motion } from "motion/react";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
     <header className="text-md relative flex w-full items-center justify-between bg-transparent">
-      <div className="relative z-30 flex h-6 flex-row items-center justify-between">
+      <div className="relative z-30 flex h-5 flex-row items-center justify-between">
         <Logo className="desktop:h-20 h-24" />
       </div>
-      <div className="z-20 hidden items-center space-x-12 font-light xl:flex">
-        <Link href="#hero">Home</Link>
-        <Link href="#whatToExpect">What to Expect</Link>
-        <Link href="#topicsAndSpeakers">Topics and Speakers</Link>
-        <Link href="">Schedule</Link>
-        <Link href="">Socials</Link>
-        <Link href="#partnership">Partnership</Link>
+      <div className="z-20 hidden items-center space-x-4 font-light xl:flex">
+        <motion.a
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.5, delay: 0.5, ease: "easeIn" }}
+          className="rounded-[18px] p-2 transition-all duration-300 hover:bg-white/20"
+          href="#hero"
+        >
+          Home
+        </motion.a>
+        <motion.a
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.5, delay: 0.5, ease: "easeIn" }}
+          className="rounded-[18px] px-5 py-2 transition-all duration-300 hover:bg-white/20"
+          href="#whatToExpect"
+        >
+          What to Expect
+        </motion.a>
+        <motion.a
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.5, delay: 0.5, ease: "easeIn" }}
+          className="rounded-[18px] px-5 py-2 transition-all duration-300 hover:bg-white/20"
+          href="#topicsAndSpeakers"
+        >
+          Topics and Speakers
+        </motion.a>
+        <motion.a
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.5, delay: 0.5, ease: "easeIn" }}
+          className="rounded-[18px] px-5 py-2 transition-all duration-300 hover:bg-white/20"
+          href=""
+        >
+          Schedule
+        </motion.a>
+        <motion.a
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.5, delay: 0.5, ease: "easeIn" }}
+          className="rounded-[18px] px-5 py-2 transition-all duration-300 hover:bg-white/20"
+          href=""
+        >
+          Socials
+        </motion.a>
+        <motion.a
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.5, delay: 0.5, ease: "easeIn" }}
+          className="rounded-[18px] px-5 py-2 transition-all duration-300 hover:bg-white/20"
+          href="#partnership"
+        >
+          Partnership
+        </motion.a>
       </div>
       <div className="xl:hidden">
         <button

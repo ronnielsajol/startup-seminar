@@ -1,5 +1,21 @@
 import { cn } from "@/lib/utils";
 import React from "react";
+import { motion } from "motion/react";
+
+const container = {
+  hidden: { opacity: 0 },
+  show: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.5,
+    },
+  },
+};
+
+const child = {
+  hidden: { opacity: 0, y: 20 },
+  show: { opacity: 1, y: 0 },
+};
 
 const Introduction = () => {
   return (
@@ -11,8 +27,14 @@ const Introduction = () => {
       )}
     >
       <div className={cn("max-xl:grid-rows-2", "laptop:grid-cols-2 grid")}>
-        <div className={cn("flex flex-col gap-4", "max-xl:order-2")}>
-          <div className="flex gap-2 max-xl:items-end">
+        <motion.div
+          variants={container}
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true }}
+          className={cn("flex flex-col gap-4", "max-xl:order-2")}
+        >
+          <motion.div variants={child} className="flex gap-2 max-xl:items-end">
             <div className="flex items-center justify-center text-6xl">
               <h1>🚀</h1>
             </div>
@@ -24,14 +46,14 @@ const Introduction = () => {
                 Why Start-Up?
               </p>
             </div>
-          </div>
-          <p className="text-base">
+          </motion.div>
+          <motion.p variants={child} className="text-base">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut
             consequat mi mauris, vitae pretium lacus congue et. Donec pretium
             feugiat mauris et eleifend. Nam tincidunt odio nec ornare porttitor.
             Vivamus ac tempor neque. Cras a consectetur ipsum. Nunc vitae{" "}
-          </p>
-          <div className="text-base">
+          </motion.p>
+          <motion.div variants={child} className="text-base">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut
             consequat mi mauris, vitae pretium lacus congue et. Donec pretium
             feugiat mauris et eleifend. Nam tincidunt odio nec ornare porttitor.
@@ -39,8 +61,8 @@ const Introduction = () => {
             faucibus mauris, vel ornare purus. Nunc iaculis turpis ac facilisis
             sodales. Ut auctor non urna nec fringilla. Aenean cursus lorem arcu,
             ac finibus nunc maximus eget.
-          </div>
-          <div className="flex gap-2 max-xl:flex-col">
+          </motion.div>
+          <motion.div variants={child} className="flex gap-2 max-xl:flex-col">
             <button
               className={cn(
                 "max-w-max rounded-[68px] border-2 border-white px-9 py-2.5 text-xs font-bold text-white",
@@ -57,16 +79,19 @@ const Introduction = () => {
             >
               Get Your Ticket
             </button>
-          </div>
-        </div>
+          </motion.div>
+        </motion.div>
         <div className="place-content-center place-items-end max-xl:order-1">
-          <div
+          <motion.div
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            transition={{ duration: 1.5, delay: 0.5, ease: "easeInOut" }}
             className={cn(
               "h-[500px] w-full",
               "desktop:h-[395px] desktop:w-[650px] rounded-[52px] bg-[#353030]",
               "laptop:h-full laptop:w-[500px]",
             )}
-          ></div>
+          ></motion.div>
         </div>
       </div>
     </main>

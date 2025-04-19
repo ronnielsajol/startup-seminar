@@ -3,6 +3,7 @@
 import React from "react";
 import { cn } from "@/lib/utils";
 import Image from "next/image";
+import { motion } from "motion/react";
 
 interface Session {
   id: string;
@@ -17,20 +18,40 @@ interface SessionCardGridProps {
   className?: string;
 }
 
+const container = {
+  hidden: { opacity: 0 },
+  show: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.35,
+    },
+  },
+};
+
+const child = {
+  hidden: { opacity: 0, x: 30 },
+  show: { opacity: 1, x: 0 },
+};
+
 export function SessionCardGrid({ sessions, className }: SessionCardGridProps) {
   const [activeId, setActiveId] = React.useState<string | undefined>(undefined);
 
   return (
-    <div
+    <motion.div
+      variants={container}
+      initial="hidden"
+      whileInView="show"
+      viewport={{ once: true }}
       className={cn(
-        "desktop:h-96 laptop:h-72 grid h-[200px] w-full grid-cols-6 gap-6 overflow-x-auto px-10 py-10 max-xl:flex max-xl:min-h-[250px] max-xl:overflow-x-scroll",
+        "desktop:h-96 laptop:h-72 grid h-[400px] w-full grid-cols-6 gap-6 overflow-x-auto px-10 py-10 max-xl:flex max-xl:min-h-[250px] max-xl:overflow-x-scroll",
         className,
       )}
     >
       {sessions.map((session) => (
-        <div
+        <motion.div
+          variants={child}
           key={session.id}
-          className="group relative h-full w-full overflow-hidden rounded-[19px] text-black transition-all duration-500 hover:scale-110 max-xl:min-w-[300px]"
+          className="group relative h-full w-full overflow-hidden rounded-[19px] border-2 border-white/10 text-black transition-all duration-300 hover:scale-110 max-xl:min-w-[300px]"
           onMouseEnter={() => setActiveId(session.id)}
           onMouseLeave={() => setActiveId(undefined)}
         >
@@ -44,7 +65,7 @@ export function SessionCardGrid({ sessions, className }: SessionCardGridProps) {
 
           <div
             className={cn(
-              "absolute inset-0 z-20 transition-all duration-500",
+              "absolute inset-0 z-20 transition-all duration-300",
               "bg-gradient-to-br opacity-80 mix-blend-multiply group-hover:opacity-0",
             )}
             style={{
@@ -64,7 +85,7 @@ export function SessionCardGrid({ sessions, className }: SessionCardGridProps) {
           >
             <div
               className={cn(
-                "flex flex-col transition-all duration-500",
+                "flex flex-col transition-all duration-300",
                 activeId === session.id ? "opacity-0" : "opacity-100",
               )}
             >
@@ -82,8 +103,8 @@ export function SessionCardGrid({ sessions, className }: SessionCardGridProps) {
               voluptates, obcaecati tempore temporibus.
             </p>
           </div>
-        </div>
+        </motion.div>
       ))}
-    </div>
+    </motion.div>
   );
 }

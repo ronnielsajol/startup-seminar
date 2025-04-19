@@ -1,7 +1,7 @@
 import Glow from "@/components/Glows";
 import Hero from "@/components/Hero";
 import Navbar from "@/components/Navbar";
-
+import { motion } from "motion/react";
 import { Marquee } from "@/components/magicui/marquee";
 import { cn } from "@/lib/utils";
 const Home = () => {
@@ -12,18 +12,38 @@ const Home = () => {
     >
       <Navbar />
       <div className="laptop:mt-4 laptop:-ml-72 desktop:text-white/5 absolute inset-0 flex h-full w-full flex-col font-extralight text-white/10 max-xl:pt-20">
-        <p className="font-horizon-outlined laptop:text-[10.5rem] desktop:text-[15rem] laptop:leading-[10.5rem] desktop:leading-[15rem] laptop:whitespace-nowrap text-center text-6xl font-light tracking-wide whitespace-break-spaces">
+        <motion.p
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 1.5, delay: 2, ease: "easeInOut" }}
+          className="font-horizon-outlined laptop:text-[10.5rem] desktop:text-[15rem] laptop:leading-[10.5rem] desktop:leading-[15rem] laptop:whitespace-nowrap text-center text-6xl font-light tracking-wide whitespace-break-spaces"
+        >
           START-UP 2025
-        </p>
-        <p className="font-horizon-outlined laptop:text-[10.5rem] desktop:text-[15rem] laptop:leading-[10.5rem] desktop:leading-[15rem] laptop:whitespace-nowrap text-center text-6xl font-light tracking-wide whitespace-break-spaces">
+        </motion.p>
+        <motion.p
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 1.5, delay: 2, ease: "easeInOut" }}
+          className="font-horizon-outlined laptop:text-[10.5rem] desktop:text-[15rem] laptop:leading-[10.5rem] desktop:leading-[15rem] laptop:whitespace-nowrap text-center text-6xl font-light tracking-wide whitespace-break-spaces"
+        >
           DESIGNING CONCEPTS
-        </p>
-        <p className="font-horizon-outlined laptop:text-[10.5rem] desktop:text-[15rem] laptop:leading-[10.5rem] desktop:leading-[15rem] laptop:whitespace-nowrap text-center text-6xl font-light tracking-wide whitespace-break-spaces">
+        </motion.p>
+        <motion.p
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 1.5, delay: 2, ease: "easeInOut" }}
+          className="font-horizon-outlined laptop:text-[10.5rem] desktop:text-[15rem] laptop:leading-[10.5rem] desktop:leading-[15rem] laptop:whitespace-nowrap text-center text-6xl font-light tracking-wide whitespace-break-spaces"
+        >
           LAUNCHING REALITIES
-        </p>
-        <p className="font-horizon-outlined laptop:text-[10.5rem] desktop:text-[15rem] laptop:leading-[10.5rem] desktop:leading-[15rem] laptop:whitespace-nowrap text-center text-6xl font-light tracking-wide whitespace-break-spaces">
+        </motion.p>
+        <motion.p
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 1.5, delay: 2, ease: "easeInOut" }}
+          className="font-horizon-outlined laptop:text-[10.5rem] desktop:text-[15rem] laptop:leading-[10.5rem] desktop:leading-[15rem] laptop:whitespace-nowrap text-center text-6xl font-light tracking-wide whitespace-break-spaces"
+        >
           LAUNCHING REALITIES
-        </p>
+        </motion.p>
       </div>
       <div className="absolute inset-0 max-h-screen">
         <Glow

@@ -1,7 +1,10 @@
+"use client";
 import { cn } from "@/lib/utils";
 import React from "react";
 import Countdown from "./Countdown";
 import { Marquee } from "./magicui/marquee";
+import { BoxReveal } from "./magicui/box-reveal";
+import { motion } from "motion/react";
 
 const Hero = () => {
   return (
@@ -11,16 +14,18 @@ const Hero = () => {
     >
       <div className={cn("max-xl:grid-rows-2", "grid xl:grid-cols-4")}>
         <div className={cn("xl:col-span-3")}>
-          <p
-            className={cn(
-              "max-xl:text-[0.875rem]",
-              "laptop:text-xl",
-              "desktop:text-2xl",
-              "font-light",
-            )}
-          >
-            Start-Up 2025:
-          </p>
+          <BoxReveal boxColor={"#1e73e8"} duration={0.5}>
+            <p
+              className={cn(
+                "max-xl:text-[0.875rem]",
+                "laptop:text-xl",
+                "desktop:text-2xl",
+                "font-light",
+              )}
+            >
+              Start-Up 2025:
+            </p>
+          </BoxReveal>
           <h1
             className={cn(
               "text-[2.75rem] leading-[2.75rem] tracking-wider",
@@ -29,7 +34,9 @@ const Hero = () => {
               "mt-6 mb-4 font-black uppercase",
             )}
           >
-            Designing Concepts
+            <BoxReveal boxColor={"#8e44ad"} duration={0.5}>
+              Designing Concepts
+            </BoxReveal>
           </h1>
           <h1
             className={cn(
@@ -39,9 +46,14 @@ const Hero = () => {
               "font-black uppercase",
             )}
           >
-            Launching Realities
+            <BoxReveal boxColor={"#00c853"} duration={0.5}>
+              Launching Realities
+            </BoxReveal>
           </h1>
-          <p
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 1 }}
             className={cn(
               "max-xl:mt-6 max-xl:text-[0.875rem]",
               "laptop:text-md",
@@ -57,9 +69,12 @@ const Hero = () => {
               <br className="xl:hidden" />
               at polytechnic University of the Philippines
             </span>{" "}
-          </p>
+          </motion.p>
         </div>
-        <div
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 1 }}
           className={cn(
             "gap-4",
             "flex flex-col place-items-end justify-center xl:mt-8 xl:gap-6.25",
@@ -99,7 +114,7 @@ const Hero = () => {
               Learn More
             </button>
           </div>
-        </div>
+        </motion.div>
       </div>
       <div
         className={cn(
@@ -128,7 +143,9 @@ const Hero = () => {
               "font-bold tracking-widest",
             )}
           >
-            <Countdown />
+            <BoxReveal boxColor={"#ffc107"} duration={0.5}>
+              <Countdown />
+            </BoxReveal>
           </h2>
         </div>
         <div className="flex flex-col">
@@ -150,7 +167,9 @@ const Hero = () => {
               "font-bold",
             )}
           >
-            69 Aspiring Founders
+            <BoxReveal boxColor={"#ff6d00"} duration={0.5}>
+              69 Aspiring Founders
+            </BoxReveal>
           </h2>
         </div>
         <div className="flex flex-col">
@@ -172,7 +191,9 @@ const Hero = () => {
               "font-bold",
             )}
           >
-            15 Companies On-Board
+            <BoxReveal boxColor={"#ff3b3b"} duration={0.5}>
+              15 Companies On-Board
+            </BoxReveal>
           </h2>
         </div>
         <div className="flex flex-col xl:items-end">
@@ -194,7 +215,9 @@ const Hero = () => {
               "font-bold",
             )}
           >
-            Facebook Live
+            <BoxReveal boxColor={"#1e73e8"} duration={0.5}>
+              Facebook Live
+            </BoxReveal>
           </h2>
         </div>
         <Marquee className="font-horizon absolute inset-x-0 -bottom-3 z-20 -ml-7.5 w-[calc(100%+5rem)] min-w-full bg-white font-black text-black uppercase xl:hidden">
