@@ -62,7 +62,10 @@ const Introduction = () => {
             sodales. Ut auctor non urna nec fringilla. Aenean cursus lorem arcu,
             ac finibus nunc maximus eget.
           </motion.div>
-          <motion.div variants={child} className="flex gap-2 max-xl:flex-col">
+          <motion.div
+            variants={child}
+            className="laptop:mt-10 flex gap-2 max-xl:flex-col"
+          >
             <button
               className={cn(
                 "max-w-max rounded-[68px] border-2 border-white px-9 py-2.5 text-xs font-bold text-white",

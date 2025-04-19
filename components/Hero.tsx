@@ -26,30 +26,30 @@ const Hero = () => {
               Start-Up 2025:
             </p>
           </BoxReveal>
-          <h1
-            className={cn(
-              "text-[2.75rem] leading-[2.75rem] tracking-wider",
-              "laptop:text-[3.375rem] laptop:leading-[3.375rem]",
-              "desktop:text-[5.375rem] desktop:leading-[5.375rem]",
-              "mt-6 mb-4 font-black uppercase",
-            )}
-          >
-            <BoxReveal boxColor={"#8e44ad"} duration={0.5}>
+          <BoxReveal boxColor={"#8e44ad"} duration={0.5}>
+            <h1
+              className={cn(
+                "text-[2.75rem] leading-[2.75rem] tracking-wider",
+                "laptop:text-[3.375rem] laptop:leading-[3.375rem]",
+                "desktop:text-[5.375rem] desktop:leading-[5.375rem]",
+                "mt-6 mb-4 font-black uppercase",
+              )}
+            >
               Designing Concepts
-            </BoxReveal>
-          </h1>
-          <h1
-            className={cn(
-              "text-[2.75rem] leading-[2.75rem] tracking-wider",
-              "laptop:text-[3.375rem] laptop:leading-[3.375rem]",
-              "desktop:text-[5.375rem] desktop:leading-[5.375rem]",
-              "font-black uppercase",
-            )}
-          >
-            <BoxReveal boxColor={"#00c853"} duration={0.5}>
+            </h1>
+          </BoxReveal>
+          <BoxReveal boxColor={"#00c853"} duration={0.5}>
+            <h1
+              className={cn(
+                "text-[2.75rem] leading-[2.75rem] tracking-wider",
+                "laptop:text-[3.375rem] laptop:leading-[3.375rem]",
+                "desktop:text-[5.375rem] desktop:leading-[5.375rem]",
+                "font-black uppercase",
+              )}
+            >
               Launching Realities
-            </BoxReveal>
-          </h1>
+            </h1>
+          </BoxReveal>
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -72,8 +72,8 @@ const Hero = () => {
           </motion.p>
         </div>
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
           transition={{ duration: 0.5, delay: 1 }}
           className={cn(
             "gap-4",
@@ -89,8 +89,12 @@ const Hero = () => {
               "flex flex-col text-end",
             )}
           >
-            <p className="">Date: May 13-15, 2025</p>
-            <p className="font-light">Venue: PUP-ITECH Building</p>
+            <BoxReveal boxColor={"#00c853"} duration={0.5}>
+              <p className="">Date: May 13-15, 2025</p>
+            </BoxReveal>
+            <BoxReveal boxColor={"#8e44ad"} duration={0.5}>
+              <p className="font-light">Venue: PUP-ITECH Building</p>
+            </BoxReveal>
           </div>
           <div className="flex max-w-max flex-col gap-2.5">
             <button
@@ -159,18 +163,18 @@ const Hero = () => {
           >
             Total Users Registered:
           </p>
-          <h2
-            className={cn(
-              "max-xl:text-[1.55rem]",
-              "laptop:text-xl",
-              "desktop:text-3xl",
-              "font-bold",
-            )}
-          >
-            <BoxReveal boxColor={"#ff6d00"} duration={0.5}>
+          <BoxReveal boxColor={"#ff6d00"} duration={0.5}>
+            <h2
+              className={cn(
+                "max-xl:text-[1.55rem]",
+                "laptop:text-xl",
+                "desktop:text-3xl",
+                "font-bold",
+              )}
+            >
               69 Aspiring Founders
-            </BoxReveal>
-          </h2>
+            </h2>
+          </BoxReveal>
         </div>
         <div className="flex flex-col">
           <p
@@ -183,18 +187,18 @@ const Hero = () => {
           >
             Total Organizations On-Board
           </p>
-          <h2
-            className={cn(
-              "max-xl:text-[1.55rem]",
-              "laptop:text-xl",
-              "desktop:text-3xl",
-              "font-bold",
-            )}
-          >
-            <BoxReveal boxColor={"#ff3b3b"} duration={0.5}>
+          <BoxReveal boxColor={"#ff3b3b"} duration={0.5}>
+            <h2
+              className={cn(
+                "max-xl:text-[1.55rem]",
+                "laptop:text-xl",
+                "desktop:text-3xl",
+                "font-bold",
+              )}
+            >
               15 Companies On-Board
-            </BoxReveal>
-          </h2>
+            </h2>
+          </BoxReveal>
         </div>
         <div className="flex flex-col xl:items-end">
           <p
@@ -207,18 +211,18 @@ const Hero = () => {
           >
             Available On
           </p>
-          <h2
-            className={cn(
-              "max-xl:text-[1.55rem]",
-              "laptop:text-xl",
-              "desktop:text-3xl",
-              "font-bold",
-            )}
-          >
-            <BoxReveal boxColor={"#1e73e8"} duration={0.5}>
+          <BoxReveal boxColor={"#1e73e8"} duration={0.5}>
+            <h2
+              className={cn(
+                "max-xl:text-[1.55rem]",
+                "laptop:text-xl",
+                "desktop:text-3xl",
+                "font-bold",
+              )}
+            >
               Facebook Live
-            </BoxReveal>
-          </h2>
+            </h2>
+          </BoxReveal>
         </div>
         <Marquee className="font-horizon absolute inset-x-0 -bottom-3 z-20 -ml-7.5 w-[calc(100%+5rem)] min-w-full bg-white font-black text-black uppercase xl:hidden">
           Designing Concepts, Launching Realities
