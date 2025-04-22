@@ -3,7 +3,7 @@ import { motion } from "motion/react";
 
 const BackgroundOverlay = () => {
   return (
-    <div className="laptop:pt-24 desktop:text-white/5 absolute inset-0 z-0 h-full w-full max-xl:text-white/15">
+    <div className="laptop:pt-24 laptop:text-white/5 absolute inset-0 z-0 h-full w-full max-xl:text-white/15">
       <motion.h1
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
