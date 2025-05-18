@@ -43,7 +43,8 @@ export function SessionCardGrid({ sessions, className }: SessionCardGridProps) {
       whileInView="show"
       viewport={{ once: true }}
       className={cn(
-        "desktop:h-96 laptop:h-72 grid h-[400px] w-full grid-cols-6 gap-6 overflow-x-auto px-10 py-10 max-xl:flex max-xl:min-h-[250px] max-xl:overflow-x-scroll",
+        "desktop:h-96 laptop:h-72 laptop:py-4 desktop:px-0 desktop:p-10 laptop:w-screen desktop:grid-cols-6 laptop:grid-cols-[repeat(6,_minmax(0,_200px))] laptop:justify-center grid h-[400px] w-full gap-6 overflow-x-auto",
+        "max-xl:flex max-xl:min-h-[250px] max-xl:overflow-x-scroll max-xl:px-4",
         className,
       )}
     >
@@ -51,7 +52,7 @@ export function SessionCardGrid({ sessions, className }: SessionCardGridProps) {
         <motion.div
           variants={child}
           key={session.id}
-          className="group relative h-full w-full overflow-hidden rounded-[19px] border-2 border-white/10 text-black transition-all duration-300 hover:scale-110 max-xl:min-w-[300px]"
+          className="group max-laptop:max-w-[200px] relative h-full w-full overflow-hidden rounded-[19px] border-2 border-white/10 text-black transition-all duration-300 hover:scale-110 max-xl:min-w-[300px]"
           onMouseEnter={() => setActiveId(session.id)}
           onMouseLeave={() => setActiveId(undefined)}
         >
@@ -85,15 +86,17 @@ export function SessionCardGrid({ sessions, className }: SessionCardGridProps) {
           >
             <div
               className={cn(
+                "",
                 "flex flex-col transition-all duration-300",
                 activeId === session.id ? "opacity-0" : "opacity-100",
               )}
             >
-              <p>{session.title}</p>
+              <p className="laptop:max-desktop:text-xs">{session.title}</p>
               <p className="font-bold">{session.subtitle}</p>
             </div>
             <p
               className={cn(
+                "laptop:max-desktop:text-xs",
                 "self-end p-2 text-xs transition-all duration-500",
                 activeId === session.id ? "opacity-100" : "opacity-0",
               )}
