@@ -1,6 +1,8 @@
 import { cn } from "@/lib/utils";
 import React from "react";
 import Logo from "./Logo";
+import Image from "next/image";
+import Link from "next/link";
 
 const Footer = () => {
   return (
@@ -20,8 +22,22 @@ const Footer = () => {
             <p className="text-base font-bold">startup.pup@gmail.com</p>
           </div>
         </div>
-        <div className="laptop:pb-8 self-end max-xl:self-start">
+        <div className="laptop:pb-8 flex flex-col self-end max-xl:self-start">
           <p>Social Media Links:</p>
+          <div className="flex justify-end">
+            <Link
+              href={"https://www.facebook.com/pup.startup2025"}
+              target="_blank"
+            >
+              {" "}
+              <Image
+                src={"/facebook.svg"}
+                alt="facebook"
+                width={40}
+                height={40}
+              />
+            </Link>
+          </div>
         </div>
       </div>
       <div className="flex items-center justify-center gap-1.5 max-xl:flex-col max-xl:items-start">

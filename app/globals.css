@@ -177,3 +177,21 @@ body {
     @apply bg-background text-foreground;
   }
 }
+
+.scrollbar-transparent {
+  scrollbar-width: thin; /* Firefox support */
+  scrollbar-color: rgba(255, 255, 255, 0.3) transparent;
+}
+
+.scrollbar-transparent::-webkit-scrollbar {
+  width: 10px;
+}
+
+.scrollbar-transparent::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.scrollbar-transparent::-webkit-scrollbar-thumb {
+  background-color: rgba(255, 255, 255, 0.3);
+  border-radius: 8px;
+}

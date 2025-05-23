@@ -11,45 +11,60 @@ import { BoxReveal } from "./magicui/box-reveal";
 const cards = [
   {
     id: "1",
-    title: "Resource Speaker",
-    name: "Juan Dela Cruz",
-    backgroundUrl: "https://picsum.photos/1000/1000?random=16",
+    title: "Co-founder",
+    name: "Sofia Nicole Sy",
+    company: "SOFI AI Tech Solution",
+    backgroundUrl: "/images/SESSION1/Sy.jpg",
+    bionote:
+      "Sophia Sy is the co-founder of SOFI AI, building AI-driven solutions that help brands effortlessly scale their customer engagement. Homeschooled for 17 years, she developed a deep love for unconventional learning, which carried through to graduating Cum Laude with a Silver Thesis Award from De La Salle University.\n\nShe believes in working with excellence, integrity, and dedication—always as if for the Lord.",
+    style: "",
   },
   {
     id: "2",
-    title: "Resource Speaker",
-    name: "Juan Dela Cruz",
-    backgroundUrl: "https://picsum.photos/1000/1000?random=17",
+    title: "Product Owner",
+    name: "Grahssel Dungca",
+    company: "Crawford & Company",
+    backgroundUrl: "/images/SESSION2/Dungca.JPG",
+    bionote:
+      "Grahssel Dungca is a seasoned technology professional with a strong foundation in Electronics Engineering. After graduating with a BS in Electronics and Communications Engineering, he began their career in the semiconductor industry as a Quality Assurance Engineer.\n\nDriven by a passion for software development, Grahssel transitioned into the software domain, taking on roles such as Quality Assurance Engineer, Business Analyst, Scrum Master, and ultimately, Product Owner. This diverse experience has equipped him with a deep understanding of the software development lifecycle and a keen eye for detail.\n\nBeyond technical expertise, Grahssel is dedicated to fostering a vibrant tech community. Starting as an active participant, he now plays a pivotal role in building grassroots communities, collaborating with organizations like DevCon Philippines and No-Code Philippines to empower developers and promote knowledge sharing.",
+    style: "bg-top",
   },
   {
     id: "3",
-    title: "Resource Speaker",
-    name: "Juan Dela Cruz",
-    backgroundUrl: "https://picsum.photos/1000/1000?random=18",
+    title: "Junior Cloud Consultant",
+    name: "Ace Batacandulo",
+    company: "Tutorials Dojo",
+    backgroundUrl: "/images/SESSION3/Batacandulo.jpg",
+    bionote:
+      "Ace is a Junior Cloud Consultant at Tutorials Dojo, AWS Certified, and one of the AWS Community Builders in the Serverless Category. He serves as an AWS User Group Meetup Lead Philippines, Co-Lead of Kubernetes User Group PH, and Google Developers Group Cloud Manila Content Committee. He graduated Magna Cum Laude, earning Dean’s List honors from 2020 to 2024 and receiving multiple College Honors. He was also a City of General Trias Scholar and demonstrated leadership in various student organizations, including serving as President of the University Student Government at PCU Dasmariñas (A.Y. 2023–2024) and Chief Relations Officer of the AWS Cloud Club.\n\nBeyond academics, Ace held prominent roles such as President of the Computer Society and actively contributed to student initiatives like Keep the Change: Youth Policy Lab and the National Rizal Youth Leadership Institute.\n\nHe was recognized for outstanding leadership, receiving awards such as Most Outstanding Student Leader in the Academic Category and served as a guest speaker at multiple events. With a passion for technology, leadership, and community development, Ace remained dedicated to making an impact both academically and in the broader community.",
+    style: "desktop:bg-center",
   },
   {
     id: "4",
-    title: "Resource Speaker",
-    name: "Juan Dela Cruz",
-    backgroundUrl: "https://picsum.photos/1000/1000?random=19",
+    title: "Frontend Web Developer",
+    name: "Percival Ian Muico",
+    company: "Three Division",
+    backgroundUrl: "/images/SESSION4/Muico.jpeg",
+    bionote:
+      "A web designer and developer from Davao with experience working on websites for startups and organizations around the world. He currently works with Three Division, a 3D animation and concept design studio trusted by major names like Disney and Warner Bros. He specializes in tools like Webflow and NextJS, and focuses on creating websites that are both visually appealing and functional.",
   },
   {
     id: "5",
-    title: "Resource Speaker",
-    name: "Juan Dela Cruz",
-    backgroundUrl: "https://picsum.photos/1000/1000?random=120",
+    title: "Packaged App Development Specialist",
+    name: "Rachelle Perez",
+    company: "Accenture",
+    backgroundUrl: "/images/SESSION5/Rachelle.jpeg",
+    bionote:
+      "Rachelle Perez is a seasoned Data Analyst with a robust foundation in Business Analytics and Computer Science. She began her professional journey at Accenture Inc., where she advanced from an Analyst to Team Lead in Packaged Application Development. Her career is defined by a deep commitment to data-driven decision-making, with expertise in data visualization, statistical analysis, and data deployment. This breadth of experience allows her to transform complex data into clear, actionable insights.\n\nBeyond her technical experience, Rachelle is also passionate about cultivating the dynamic tech community. From her early involvement as a member of DEVCON PH, she has grown into a leadership role as Vice President for Growth, helping expand the organization’s reach and impact. She is also a sought-after resource speaker, frequently delivering talks on data analytics, design thinking, and artificial intelligence, where she shares her expertise and inspires others to thrive in the ever-evolving world of technology.",
+    style: "desktop:bg-center",
   },
   {
     id: "6",
     title: "Resource Speaker",
-    name: "Juan Dela Cruz",
-    backgroundUrl: "https://picsum.photos/1000/1000?random=10",
-  },
-  {
-    id: "7",
-    title: "Resource Speaker",
-    name: "Juan Dela Cruz",
-    backgroundUrl: "https://picsum.photos/1000/1000?random=100",
+    name: "Quincy ?",
+    company: "",
+    backgroundUrl: "/images/SESSION6/Quincy.JPG",
+    bionote: "",
   },
 ];
 
@@ -132,14 +147,13 @@ const WhatToExpect = () => {
           </h1>
           <BoxReveal boxColor={"#00c853"} duration={0.5}>
             <p className="laptop:max-w-[800px] desktop:max-w-[900px] max-w-[300px] text-center text-base max-xl:text-start">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut
-              consequat mi mauris, vitae pretium lacus congue et. Donec pretium
-              feugiat mauris et eleifend. Nam tincidunt odio nec ornare
-              porttitor. Vivamus ac tempor neque. Cras a consectetur ipsum. Nunc
-              vitae faucibus mauris, vel ornare purus. Nunc iaculis turpis ac
-              facilisis sodales. Ut auctor non urna nec fringilla. Aenean cursus
-              lorem arcu, ac finibus nunc maximus eget. Vestibulum nec euismod
-              augue.
+              Get ready to explore the future with a lineup of sessions made for
+              students who are curious, ambitious, and ready to make their mark.
+              From breakthrough ideas in tech and design to real stories of
+              building startups and careers, each topic is designed to spark
+              inspiration and action. With speakers who are creators, founders,
+              and changemakers, you’ll get insights that go beyond the
+              classroom—and maybe even a few new paths to follow.
             </p>
           </BoxReveal>
         </div>

@@ -2,6 +2,8 @@ import { cn } from "@/lib/utils";
 import React from "react";
 import { motion } from "motion/react";
 import { BoxReveal } from "./magicui/box-reveal";
+import Float from "@/fancy/components/blocks/float";
+import Image from "next/image";
 
 const Introduction = () => {
   return (
@@ -36,22 +38,28 @@ const Introduction = () => {
           </div>
           <BoxReveal boxColor="#ff3b3b" duration={0.5}>
             <p className="text-base">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut
-              consequat mi mauris, vitae pretium lacus congue et. Donec pretium
-              feugiat mauris et eleifend. Nam tincidunt odio nec ornare
-              porttitor. Vivamus ac tempor neque. Cras a consectetur ipsum. Nunc
-              vitae{" "}
+              Every groundbreaking idea starts with a single question: Why not
+              start today? At our Start-Up Seminar, we delve into the core
+              reasons behind launching your own venture. Whether it&#39;s the
+              pursuit of innovation, independence, or impact, we’ll help you
+              understand what drives successful founders to take the leap.
             </p>
           </BoxReveal>
           <BoxReveal boxColor="#ff6d00" duration={0.5}>
             <div className="text-base">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut
-              consequat mi mauris, vitae pretium lacus congue et. Donec pretium
-              feugiat mauris et eleifend. Nam tincidunt odio nec ornare
-              porttitor. Vivamus ac tempor neque. Cras a consectetur ipsum. Nunc
-              vitae faucibus mauris, vel ornare purus. Nunc iaculis turpis ac
-              facilisis sodales. Ut auctor non urna nec fringilla. Aenean cursus
-              lorem arcu, ac finibus nunc maximus eget.
+              Join us as we explore the fundamentals of start-up
+              thinking—embracing challenges, validating ideas, and crafting
+              solutions that matter. Discover how today’s start-up landscape
+              empowers aspiring entrepreneurs with more tools, support, and
+              opportunities than ever before.
+            </div>
+          </BoxReveal>
+          <BoxReveal boxColor="#ff6d00" duration={0.5}>
+            <div className="text-base">
+              Ready to ignite your journey? <br />
+              <strong>Watch the video</strong> or{" "}
+              <strong> get your ticket</strong> and take the first step toward
+              your vision.
             </div>
           </BoxReveal>
 
@@ -60,7 +68,7 @@ const Introduction = () => {
             whileInView={{ opacity: 1 }}
             transition={{ duration: 1 }}
             viewport={{ once: true }}
-            className="laptop:mt-10 flex gap-2 max-xl:flex-col"
+            className="laptop:mt-5 flex gap-2 max-xl:flex-col"
           >
             <button
               className={cn(
@@ -72,25 +80,24 @@ const Introduction = () => {
             </button>
             <button
               className={cn(
-                "max-w-max rounded-[68px] bg-white px-9 py-2.5 text-xs font-bold text-black",
-                "cursor-pointer transition duration-300 ease-in-out hover:bg-black hover:text-white max-xl:w-full max-xl:max-w-3/4",
+                "max-w-max rounded-[68px] bg-gray-50 px-9 py-2.5 text-xs font-bold text-black",
+                "cursor-pointer transition duration-300 ease-in-out hover:bg-gray-300 max-xl:w-full max-xl:max-w-3/4",
               )}
             >
               Get Your Ticket
             </button>
           </motion.div>
         </div>
-        <div className="place-content-center place-items-end max-xl:order-1">
-          <motion.div
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            transition={{ duration: 1.5, delay: 0.5, ease: "easeInOut" }}
-            className={cn(
-              "h-[500px] w-full",
-              "desktop:h-[395px] desktop:w-[650px] rounded-[52px] bg-[#353030]",
-              "laptop:h-full laptop:w-[500px]",
-            )}
-          ></motion.div>
+        <div className="place-content-center place-items-center max-xl:order-1">
+          <Float speed={0.5}>
+            <Image
+              alt="main poster"
+              src={"/images/main_poster.png"}
+              width={1000}
+              height={1000}
+              className="h-auto max-h-96 w-full"
+            />
+          </Float>
         </div>
       </div>
     </main>

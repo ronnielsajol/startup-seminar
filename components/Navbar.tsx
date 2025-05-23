@@ -44,6 +44,15 @@ const Navbar = () => {
           animate={{ opacity: 1 }}
           transition={{ duration: 0.5, delay: 0.5, ease: "easeIn" }}
           className="rounded-[18px] px-5 py-2 transition-all duration-300 hover:bg-white/20"
+          href="#partnership"
+        >
+          Partnership
+        </motion.a>
+        <motion.a
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.5, delay: 0.5, ease: "easeIn" }}
+          className="rounded-[18px] px-5 py-2 transition-all duration-300 hover:bg-white/20"
           href=""
         >
           Schedule
@@ -56,15 +65,6 @@ const Navbar = () => {
           href=""
         >
           Socials
-        </motion.a>
-        <motion.a
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.5, delay: 0.5, ease: "easeIn" }}
-          className="rounded-[18px] px-5 py-2 transition-all duration-300 hover:bg-white/20"
-          href="#partnership"
-        >
-          Partnership
         </motion.a>
       </div>
       <div className="xl:hidden">
@@ -89,12 +89,12 @@ const Navbar = () => {
         {isOpen && (
           <div className="fixed inset-0 z-20 flex h-screen w-screen items-center justify-center bg-[#1c1e1e]/50 py-2 backdrop-blur-md xl:hidden">
             <div className="flex flex-col items-center space-y-6 py-2 text-2xl">
-              <a href="">Home</a>
-              <a href="">What to Expect</a>
-              <a href="">Topics and Speakers</a>
+              <a href="#hero">Home</a>
+              <a href="#whatToExpect">What to Expect</a>
+              <a href="#topicsAndSpeakers">Topics and Speakers</a>
+              <a href="#partnership">Partnership</a>
               <a href="">Schedule</a>
               <a href="">Socials</a>
-              <a href="">Partnership</a>
             </div>
           </div>
         )}

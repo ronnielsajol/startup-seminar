@@ -27,14 +27,13 @@ const Sponsors = () => {
           </BoxReveal>
           <BoxReveal duration={0.5} boxColor="#00c853">
             <p className="laptop:text-[14px] desktop:text-base max-xl:text-[0.975rem]">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut
-              consequat mi mauris, vitae pretium lacus congue et. Donec pretium
-              feugiat mauris et eleifend. Nam tincidunt odio nec ornare
-              porttitor. Vivamus ac tempor neque. Cras a consectetur ipsum. Nunc
-              vitae faucibus mauris, vel ornare purus. Nunc iaculis turpis ac
-              facilisis sodales. Ut auctor non urna nec fringilla. Aenean cursus
-              lorem arcu, ac finibus nunc maximus eget. Vestibulum nec euismod
-              augue.
+              This is more than just a seminar; it&#39;s a launchpad for your
+              vision. We are calling on the innovators, the dreamers, and the
+              builders to converge for an unparalleled experience of learning
+              and networking. Whether you&#39;re looking to secure funding, find
+              a co-founder, or gain insights from industry pioneers, this is
+              where your journey scales up. Don&#39;t just watch the future
+              unfold—be at the center of it.
             </p>
           </BoxReveal>
         </div>

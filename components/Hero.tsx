@@ -5,6 +5,7 @@ import Countdown from "./Countdown";
 import { Marquee } from "./magicui/marquee";
 import { BoxReveal } from "./magicui/box-reveal";
 import { motion } from "motion/react";
+import Link from "next/link";
 
 const Hero = () => {
   return (
@@ -90,10 +91,10 @@ const Hero = () => {
             )}
           >
             <BoxReveal boxColor={"#00c853"} duration={0.5}>
-              <p className="">Date: May 13-15, 2025</p>
+              <p className="">Date: May 27-29, 2025</p>
             </BoxReveal>
             <BoxReveal boxColor={"#8e44ad"} duration={0.5}>
-              <p className="font-light">Venue: PUP-ITECH Building</p>
+              <p className="font-light">Venue: PUP-CEA Building</p>
             </BoxReveal>
           </div>
           <div className="flex max-w-max flex-col gap-2.5">
@@ -115,7 +116,12 @@ const Hero = () => {
                 "rounded-[4.25rem] bg-white font-bold text-black",
               )}
             >
-              Learn More
+              <Link
+                href={"https://www.facebook.com/pup.startup2025"}
+                target="_blank"
+              >
+                Learn More
+              </Link>
             </button>
           </div>
         </motion.div>
