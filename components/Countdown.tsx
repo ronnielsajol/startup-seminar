@@ -7,7 +7,7 @@ interface TimeDisplayValuesType {
   seconds: number;
 }
 
-const targetDate = new Date("May 13, 2025 00:00:00").getTime();
+const targetDate = new Date("May 27, 2025 00:00:00").getTime();
 
 const generateTimeDisplay = (): TimeDisplayValuesType => {
   const rightJustNow = new Date().getTime();
