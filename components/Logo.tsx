@@ -1,4 +1,5 @@
 "use client";
+import { cn } from "@/lib/utils";
 import { motion } from "motion/react";
 
 const upAnimationConfig = {
@@ -39,19 +40,23 @@ const svgVariants = {
   },
 };
 
-const Logo = () => {
+interface LogoProps {
+  className: string;
+}
+
+const Logo = ({ className }: LogoProps) => {
   return (
     <motion.div
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 1, ease: "easeInOut" }}
-      className="relative z-10 h-80 w-full"
+      className={cn("relative z-10 w-full", className)}
     >
       <motion.svg
         viewBox="0 0 1920 1080"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
-        className="h-80 w-full"
+        className="h-full w-full"
         initial="hidden"
         animate="visible"
       >
