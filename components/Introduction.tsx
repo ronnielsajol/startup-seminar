@@ -72,14 +72,6 @@ const Introduction = () => {
           >
             <button
               className={cn(
-                "max-w-max rounded-[68px] border-2 border-white px-9 py-2.5 text-xs font-bold text-white",
-                "cursor-pointer transition duration-300 ease-in-out hover:bg-white hover:text-black max-xl:w-full max-xl:max-w-3/4",
-              )}
-            >
-              Watch Video
-            </button>
-            <button
-              className={cn(
                 "max-w-max rounded-[68px] bg-gray-50 px-9 py-2.5 text-xs font-bold text-black",
                 "cursor-pointer transition duration-300 ease-in-out hover:bg-[#bfbfbf] max-xl:w-full max-xl:max-w-3/4",
               )}

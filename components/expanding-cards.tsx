@@ -11,6 +11,7 @@ export interface CardItem {
   company: string;
   title: string;
   style?: string;
+  unoptimized?: boolean;
 }
 
 interface ExpandingCardsProps {

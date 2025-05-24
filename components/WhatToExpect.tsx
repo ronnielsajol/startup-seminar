@@ -14,10 +14,11 @@ const cards = [
     title: "Co-founder",
     name: "Sofia Nicole Sy",
     company: "SOFI AI Tech Solution",
-    backgroundUrl: "/images/SESSION1/Sy.jpg",
+    backgroundUrl: "/images/SESSION1/Sy.JPG",
     bionote:
-      "Sophia Sy is the co-founder of SOFI AI, building AI-driven solutions that help brands effortlessly scale their customer engagement. Homeschooled for 17 years, she developed a deep love for unconventional learning, which carried through to graduating Cum Laude with a Silver Thesis Award from De La Salle University.\n\nShe believes in working with excellence, integrity, and dedication—always as if for the Lord.",
+      "Sofia Nicole Sy is the co-founder of SOFI AI, a company that develops AI-driven solutions to help brands scale their customer engagement. Homeschooled for 17 years, she graduated Cum Laude with a Silver Thesis Award from De La Salle University, fostering a deep love for unconventional learning. She is committed to working with excellence, integrity, and dedication, viewing her work as a service to the Lord.",
     style: "",
+    unoptimized: true,
   },
   {
     id: "2",
@@ -26,7 +27,7 @@ const cards = [
     company: "Crawford & Company",
     backgroundUrl: "/images/SESSION2/Dungca.JPG",
     bionote:
-      "Grahssel Dungca is a seasoned technology professional with a strong foundation in Electronics Engineering. After graduating with a BS in Electronics and Communications Engineering, he began their career in the semiconductor industry as a Quality Assurance Engineer.\n\nDriven by a passion for software development, Grahssel transitioned into the software domain, taking on roles such as Quality Assurance Engineer, Business Analyst, Scrum Master, and ultimately, Product Owner. This diverse experience has equipped him with a deep understanding of the software development lifecycle and a keen eye for detail.\n\nBeyond technical expertise, Grahssel is dedicated to fostering a vibrant tech community. Starting as an active participant, he now plays a pivotal role in building grassroots communities, collaborating with organizations like DevCon Philippines and No-Code Philippines to empower developers and promote knowledge sharing.",
+      "Grahssel Dungca is a seasoned technology professional with a background in Electronics Engineering who has transitioned into the software domain. He has held various roles, including Quality Assurance Engineer, Business Analyst, and Scrum Master, and is currently a Product Owner, giving him a comprehensive understanding of the software development lifecycle. Beyond his technical work, Grahssel is passionate about community building and actively collaborates with organizations like DevCon Philippines and No-Code Philippines to empower developers.",
     style: "bg-top",
   },
   {
@@ -36,7 +37,7 @@ const cards = [
     company: "Tutorials Dojo",
     backgroundUrl: "/images/SESSION3/Batacandulo.jpg",
     bionote:
-      "Ace is a Junior Cloud Consultant at Tutorials Dojo, AWS Certified, and one of the AWS Community Builders in the Serverless Category. He serves as an AWS User Group Meetup Lead Philippines, Co-Lead of Kubernetes User Group PH, and Google Developers Group Cloud Manila Content Committee. He graduated Magna Cum Laude, earning Dean’s List honors from 2020 to 2024 and receiving multiple College Honors. He was also a City of General Trias Scholar and demonstrated leadership in various student organizations, including serving as President of the University Student Government at PCU Dasmariñas (A.Y. 2023–2024) and Chief Relations Officer of the AWS Cloud Club.\n\nBeyond academics, Ace held prominent roles such as President of the Computer Society and actively contributed to student initiatives like Keep the Change: Youth Policy Lab and the National Rizal Youth Leadership Institute.\n\nHe was recognized for outstanding leadership, receiving awards such as Most Outstanding Student Leader in the Academic Category and served as a guest speaker at multiple events. With a passion for technology, leadership, and community development, Ace remained dedicated to making an impact both academically and in the broader community.",
+      "Ace Batacandulo is a Junior Cloud Consultant at Tutorials Dojo, an AWS Certified professional, and an AWS Community Builder in the Serverless Category. A Magna Cum Laude graduate and decorated student leader, he has held significant roles in various tech communities, including the AWS User Group Philippines and Google Developers Group Cloud Manila. Ace's numerous academic and leadership awards reflect his dedication to technology, leadership, and community development.",
     style: "desktop:bg-center",
   },
   {
@@ -46,7 +47,7 @@ const cards = [
     company: "Three Division",
     backgroundUrl: "/images/SESSION4/Muico.jpeg",
     bionote:
-      "A web designer and developer from Davao with experience working on websites for startups and organizations around the world. He currently works with Three Division, a 3D animation and concept design studio trusted by major names like Disney and Warner Bros. He specializes in tools like Webflow and NextJS, and focuses on creating websites that are both visually appealing and functional.",
+      "Percival Ian Muico is a web designer and developer from Davao with experience creating websites for global startups and organizations. He is currently a Frontend Web Developer at Three Division, a 3D animation and concept design studio that has worked with major clients like Disney and Warner Bros. He specializes in using Webflow and NextJS to build websites that are both aesthetically pleasing and highly functional.",
   },
   {
     id: "5",
@@ -55,14 +56,14 @@ const cards = [
     company: "Accenture",
     backgroundUrl: "/images/SESSION5/Rachelle.jpeg",
     bionote:
-      "Rachelle Perez is a seasoned Data Analyst with a robust foundation in Business Analytics and Computer Science. She began her professional journey at Accenture Inc., where she advanced from an Analyst to Team Lead in Packaged Application Development. Her career is defined by a deep commitment to data-driven decision-making, with expertise in data visualization, statistical analysis, and data deployment. This breadth of experience allows her to transform complex data into clear, actionable insights.\n\nBeyond her technical experience, Rachelle is also passionate about cultivating the dynamic tech community. From her early involvement as a member of DEVCON PH, she has grown into a leadership role as Vice President for Growth, helping expand the organization’s reach and impact. She is also a sought-after resource speaker, frequently delivering talks on data analytics, design thinking, and artificial intelligence, where she shares her expertise and inspires others to thrive in the ever-evolving world of technology.",
+      "Rachelle Perez is a seasoned Data Analyst with a strong foundation in Business Analytics and Computer Science, currently serving as a Team Lead in Packaged Application Development at Accenture. Her expertise in data visualization, statistical analysis, and data deployment allows her to translate complex data into actionable insights. Rachelle is also a dedicated contributor to the tech community, holding the position of Vice President for Growth at DEVCON PH and frequently speaking on topics such as data analytics, design thinking, and artificial intelligence.",
     style: "desktop:bg-center",
   },
   {
     id: "6",
-    title: "Resource Speaker",
-    name: "Quincy ?",
-    company: "",
+    title: "Chief Executive Officer",
+    name: "Quincy",
+    company: "Quintessence",
     backgroundUrl: "/images/SESSION6/Quincy.JPG",
     bionote: "",
   },
