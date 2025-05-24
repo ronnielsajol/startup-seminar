@@ -2,6 +2,7 @@ import { cn } from "@/lib/utils";
 import React from "react";
 import { motion } from "motion/react";
 import { BoxReveal } from "./magicui/box-reveal";
+import Link from "next/link";
 
 const Sponsors = () => {
   return (
@@ -50,9 +51,9 @@ const Sponsors = () => {
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
-            className="cursor-pointer rounded-[68px] bg-white px-9 py-2.5 font-bold text-black transition duration-300 ease-in-out hover:bg-black hover:text-white max-xl:w-full max-xl:max-w-3/4 max-xl:text-xs"
+            className="cursor-pointer rounded-[68px] bg-white px-9 py-2.5 font-bold text-black transition duration-300 ease-in-out hover:bg-[#bfbfbf] max-xl:w-full max-xl:max-w-3/4 max-xl:text-xs"
           >
-            Get Your Ticket
+            <Link href={"#schedule"}>Get Your Ticket</Link>
           </motion.button>
         </div>
       </div>

@@ -81,7 +81,7 @@ const Introduction = () => {
             <button
               className={cn(
                 "max-w-max rounded-[68px] bg-gray-50 px-9 py-2.5 text-xs font-bold text-black",
-                "cursor-pointer transition duration-300 ease-in-out hover:bg-gray-300 max-xl:w-full max-xl:max-w-3/4",
+                "cursor-pointer transition duration-300 ease-in-out hover:bg-[#bfbfbf] max-xl:w-full max-xl:max-w-3/4",
               )}
             >
               Get Your Ticket

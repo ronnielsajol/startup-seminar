@@ -106,11 +106,11 @@ const Hero = () => {
                 "rounded-[4.25rem] border-2 border-white font-bold",
               )}
             >
-              Secure Your Spot
+              <Link href={"#schedule"}>Secure Your Spot</Link>
             </button>
             <button
               className={cn(
-                "cursor-pointer px-8 py-2.5 text-base transition duration-300 ease-in-out hover:bg-black hover:text-white",
+                "cursor-pointer px-8 py-2.5 text-base transition duration-300 ease-in-out hover:bg-[#bfbfbf]",
                 "laptop:px-7 laptop:py-1.5 laptop:text-[0.875rem]",
                 "desktop:px-8 desktop:py-2.5 desktop:text-[0.875rem]",
                 "rounded-[4.25rem] bg-white font-bold text-black",
@@ -178,7 +178,7 @@ const Hero = () => {
                 "font-bold",
               )}
             >
-              69 Aspiring Founders
+              20+ Aspiring Founders
             </h2>
           </BoxReveal>
         </div>
@@ -202,7 +202,7 @@ const Hero = () => {
                 "font-bold",
               )}
             >
-              15 Companies On-Board
+              15 Organizations On-Board
             </h2>
           </BoxReveal>
         </div>

@@ -93,7 +93,7 @@ const Navbar = () => {
               <a href="#whatToExpect">What to Expect</a>
               <a href="#topicsAndSpeakers">Topics and Speakers</a>
               <a href="#partnership">Partnership</a>
-              <a href="">Schedule</a>
+              <a href="#schedule">Schedule</a>
               <a href="">Socials</a>
             </div>
           </div>
