@@ -24,7 +24,7 @@ const Footer = () => {
         </div>
         <div className="laptop:pb-8 flex flex-col self-end max-xl:self-start">
           <p>Social Media Links:</p>
-          <div className="flex justify-end">
+          <div className="flex justify-end max-xl:justify-start">
             <Link
               href={"https://www.facebook.com/pup.startup2025"}
               target="_blank"
