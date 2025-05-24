@@ -43,14 +43,6 @@ const Sponsors = () => {
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
-            className="cursor-pointer rounded-[68px] border-2 border-white px-9 py-2.5 font-bold transition duration-300 ease-in-out hover:bg-white hover:text-black max-xl:w-full max-xl:max-w-3/4 max-xl:text-xs"
-          >
-            Watch Video
-          </motion.button>
-          <motion.button
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
             className="cursor-pointer rounded-[68px] bg-white px-9 py-2.5 font-bold text-black transition duration-300 ease-in-out hover:bg-[#bfbfbf] max-xl:w-full max-xl:max-w-3/4 max-xl:text-xs"
           >
             <Link href={"#schedule"}>Get Your Ticket</Link>
