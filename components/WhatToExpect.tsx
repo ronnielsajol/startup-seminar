@@ -14,10 +14,11 @@ const cards = [
     title: "Co-founder",
     name: "Sofia Nicole Sy",
     company: "SOFI AI Tech Solution",
-    backgroundUrl: "/images/SESSION1/Sy.jpg",
+    backgroundUrl: "/images/SESSION1/Sy.JPG",
     bionote:
       "Sophia Sy is the co-founder of SOFI AI, building AI-driven solutions that help brands effortlessly scale their customer engagement. Homeschooled for 17 years, she developed a deep love for unconventional learning, which carried through to graduating Cum Laude with a Silver Thesis Award from De La Salle University.\n\nShe believes in working with excellence, integrity, and dedication—always as if for the Lord.",
     style: "",
+    unoptimized: true,
   },
   {
     id: "2",
@@ -60,9 +61,9 @@ const cards = [
   },
   {
     id: "6",
-    title: "Resource Speaker",
-    name: "Quincy ?",
-    company: "",
+    title: "Chief Executive Officer",
+    name: "Quincy",
+    company: "Quintessence",
     backgroundUrl: "/images/SESSION6/Quincy.JPG",
     bionote: "",
   },
