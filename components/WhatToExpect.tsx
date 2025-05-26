@@ -62,10 +62,31 @@ const cards = [
   {
     id: "6",
     title: "Chief Executive Officer",
-    name: "Quincy",
+    name: "Lorenzo Joaquin Romillo",
     company: "Quintessence",
     backgroundUrl: "/images/SESSION6/Quincy.JPG",
     bionote: "",
+  },
+];
+
+const cards2 = [
+  {
+    id: "1",
+    title: "SEO Research Team Lead",
+    name: "Dirk Flores",
+    company: "Canva Philippines",
+    backgroundUrl: "/images/WORKSHOP1/dirk.JPG",
+    bionote: "",
+    style: "",
+  },
+  {
+    id: "2",
+    title: "Chief Executive Officer",
+    name: "David Pedeglorio",
+    company: "FWD Peers",
+    backgroundUrl: "/images/WORKSHOP2/david.png",
+    bionote: "",
+    style: "",
   },
 ];
 
@@ -159,8 +180,20 @@ const WhatToExpect = () => {
           </BoxReveal>
         </div>
         {/* <ExpandingCards /> */}
-        <div className="w-full overflow-x-auto max-xl:overflow-x-scroll">
+        <div className="flex w-full flex-col gap-16 overflow-x-auto max-xl:overflow-x-scroll">
           <ExpandingCards items={cards} />
+        </div>
+        <div
+          className="flex flex-col items-center max-xl:gap-5"
+          id="topicsAndSpeakers"
+        >
+          <h1 className="font-horizon desktop:text-[8rem] laptop:text-[6rem] -ml-5 text-[20px] tracking-wide whitespace-nowrap uppercase">
+            <Marquee>Workshop Speakers</Marquee>
+          </h1>
+        </div>
+        {/* <ExpandingCards /> */}
+        <div className="flex w-full flex-col gap-16 overflow-x-auto max-xl:overflow-x-scroll">
+          <ExpandingCards items={cards2} />
         </div>
       </div>
       <BackgroundOverlay />

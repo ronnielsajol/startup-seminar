@@ -17,9 +17,14 @@ export interface CardItem {
 interface ExpandingCardsProps {
   items: CardItem[];
   className?: string;
+  workshop?: boolean;
 }
 
-export function ExpandingCards({ items, className }: ExpandingCardsProps) {
+export function ExpandingCards({
+  items,
+  className,
+  workshop,
+}: ExpandingCardsProps) {
   const [activeId, setActiveId] = React.useState<string | undefined>(undefined);
 
   const resetTimeoutRef = React.useRef<NodeJS.Timeout | null>(null);
@@ -72,7 +77,7 @@ export function ExpandingCards({ items, className }: ExpandingCardsProps) {
               activeId === item.id ? "opacity-0" : "opacity-100",
             )}
           >
-            Session {item.id}
+            {workshop ? "Workshop" : "Session"} {item.id}
           </div>
           <div
             className={cn(
