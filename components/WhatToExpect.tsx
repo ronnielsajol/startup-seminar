@@ -193,7 +193,7 @@ const WhatToExpect = () => {
         </div>
         {/* <ExpandingCards /> */}
         <div className="flex w-full flex-col gap-16 overflow-x-auto max-xl:overflow-x-scroll">
-          <ExpandingCards items={cards2} />
+          <ExpandingCards items={cards2} workshop />
         </div>
       </div>
       <BackgroundOverlay />
