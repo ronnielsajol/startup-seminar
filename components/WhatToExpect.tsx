@@ -75,7 +75,7 @@ const cards2 = [
     title: "SEO Research Team Lead",
     name: "Dirk Flores",
     company: "Canva Philippines",
-    backgroundUrl: "/images/WORKSHOP1/dirk.JPG",
+    backgroundUrl: "/images/WORKSHOP1/dirk.jpg",
     bionote: "",
     style: "",
   },
