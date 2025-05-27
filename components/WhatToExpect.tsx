@@ -72,10 +72,10 @@ const cards = [
 const cards2 = [
   {
     id: "1",
-    title: "SEO Research Team Lead",
-    name: "Dirk Flores",
-    company: "Canva Philippines",
-    backgroundUrl: "/images/WORKSHOP1/dirk.jpg",
+    title: "Product Owner",
+    name: "Grahssel Dungca",
+    company: "Crawford & Company",
+    backgroundUrl: "/images/SESSION2/Dungca.JPG",
     bionote: "",
     style: "",
   },

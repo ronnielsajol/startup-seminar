@@ -115,7 +115,7 @@ export function ExpandingCards({
 
                 <div
                   className={cn(
-                    "text-md scrollbar-transparent laptop:max-h-[100px] desktop:max-h-[150px] overflow-y-auto transition-all duration-700 ease-[linear(0_0%,0.1538_4.09%,0.2926_8.29%,0.4173_12.63%,0.5282_17.12%,0.6255_21.77%,0.7099_26.61%,0.782_31.67%,0.8425_37%,0.8887_42.23%,0.9257_47.79%,0.9543_53.78%,0.9752_60.32%,0.9883_67.11%,0.9961_75%,1_100%)]",
+                    "text-md scrollbar-transparent laptop:max-h-[100px] desktop:max-h-[150px] overflow-y-auto transition-all duration-700 ease-[linear(0_0%,0.1538_4.09%,0.2926_8.29%,0.4173_12.63%,0.5282_17.12%,0.6255_21.77%,0.7099_26.61%,0.782_31.67%,0.8425_37%,0.8887_42.23%,0.9257_47.79%,0.9543_53.78%,0.9752_60.32%,0.9883_67.11%,0.9961_75%,1_100%)] max-xl:max-h-[100px]",
                     activeId === item.id
                       ? "translate-x-0 opacity-100"
                       : "translate-x-5 opacity-0",
